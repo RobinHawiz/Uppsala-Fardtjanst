@@ -1,0 +1,12 @@
+h1.homepage-title {
+  width: 68rem;
+}
+
+form {
+  button {
+    background-color: $primary-button-color;
+    &:hover {
+      background-color: $primary-button-color-hover;
+    }
+  }
+}

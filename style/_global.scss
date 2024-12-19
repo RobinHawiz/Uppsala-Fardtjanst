@@ -37,11 +37,13 @@ $menu-font-color: white;
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Source Sans 3", sans-serif;
   background-color: $primary-color;
+  overflow-x: hidden;
 }
 
 h1 {

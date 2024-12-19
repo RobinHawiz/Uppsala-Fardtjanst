@@ -39,7 +39,7 @@ span {
 
 main {
   padding-top: 10rem;
-  max-width: 102.4rem;
+  width: 102.4rem;
   min-height: 70vh;
   margin: auto;
   background-color: #f4f3ff;
@@ -47,7 +47,7 @@ main {
 
 span.divider {
   display: block;
-  max-width: 60rem;
+  width: 60rem;
   height: 0.1rem;
   background-color: #202e45;
   opacity: 0.3;
@@ -59,7 +59,7 @@ footer {
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  max-width: 102.4rem;
+  width: 102.4rem;
   min-height: 10vh;
   margin: auto;
 }
@@ -131,6 +131,14 @@ form button:hover {
   cursor: pointer;
 }
 
+@media screen and (max-width: 1024px) {
+  main {
+    width: 100%;
+  }
+  footer {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 768px) {
   span.divider {
     width: 30rem;
@@ -157,7 +165,7 @@ header {
   align-items: normal;
   justify-content: space-between;
   flex-direction: row;
-  max-width: 102.4rem;
+  width: 102.4rem;
   height: 10.8rem;
   margin: auto;
   /* Navbar animation classes */
@@ -270,6 +278,11 @@ header nav.showNavbar {
   animation: showNavbar 0.5s;
 }
 
+@media screen and (max-width: 1024px) {
+  header {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 768px) {
   header .logo-desktop {
     display: none;

@@ -70,7 +70,7 @@ span {
 
 main {
   padding-top: 10rem;
-  max-width: 102.4rem;
+  width: 102.4rem;
   min-height: 70vh;
   margin: auto;
   background-color: $secondary-color;
@@ -78,7 +78,7 @@ main {
 
 span.divider {
   display: block;
-  max-width: 60rem;
+  width: 60rem;
   height: 0.1rem;
   background-color: $primary-color;
   opacity: 0.3;
@@ -87,7 +87,7 @@ span.divider {
 
 footer {
   @include flex(center, space-between, row);
-  max-width: 102.4rem;
+  width: 102.4rem;
   min-height: 10vh;
   margin: auto;
   .contact {
@@ -146,6 +146,15 @@ form {
     &:hover {
       cursor: pointer;
     }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+    width: 100%;
+  }
+  footer {
+    width: 100%;
   }
 }
 

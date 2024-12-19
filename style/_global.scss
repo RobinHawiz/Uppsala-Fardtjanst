@@ -7,11 +7,16 @@ $p-font: 2rem;
 
 $primary-color: #202e45;
 $secondary-color: #f4f3ff;
+$secondary-color-hover: #d6d1ff;
 
-$primary-button-color: #4c4698;
-$primary-button-color-hover: #7c79ad;
+$button-background-color: #4c4698;
+$button-background-color-hover: #7c79ad;
+$button-font-color: white;
 
-$secondary-socials-color-hover: #d6d1ff;
+$nav-font-color: #a8c7fa;
+$nav-divider-color: #4c4698;
+
+$menu-font-color: white;
 
 //Global functions
 
@@ -39,56 +44,54 @@ body {
   background-color: $primary-color;
 }
 
-header {
-  @include flex(center, space-between, row);
-  max-width: 102.4rem;
-  min-height: 12vh;
+h1 {
+  font-size: $h1-font;
+  color: $primary-color;
+  text-align: center;
   margin: auto;
-  .logo {
-    width: 21.8rem;
-    a {
-      @include flex(center, center, column);
-    }
-    img {
-      width: 12.4rem;
-    }
-  }
 }
 
-.logo-desktop {
-  a {
-    padding: 3.15rem 4.7rem;
-  }
-  img {
-    height: 4.5rem;
-  }
+h3 {
+  font-size: $h3-font;
+  color: $primary-color;
+  font-weight: 400;
 }
 
-.logo-mobile {
-  display: none;
-  a {
-    padding: 1.9rem 4.7rem;
-  }
-  img {
-    height: 7rem;
-  }
+p {
+  display: block;
+  font-size: $p-font;
+  color: $primary-color;
+  text-align: center;
+}
+
+span {
+  font-size: $p-font;
 }
 
 main {
   padding-top: 10rem;
   max-width: 102.4rem;
-  min-height: 76vh;
+  min-height: 70vh;
   margin: auto;
   background-color: $secondary-color;
+}
+
+span.divider {
+  display: block;
+  max-width: 60rem;
+  height: 0.1rem;
+  background-color: $primary-color;
+  opacity: 0.3;
+  margin: 3rem auto 4.8rem auto;
 }
 
 footer {
   @include flex(center, space-between, row);
   max-width: 102.4rem;
-  min-height: 12vh;
+  min-height: 10vh;
   margin: auto;
   .contact {
-    margin-left: 2rem;
+    margin: 2rem 0 2rem 2rem;
     p {
       text-align: left;
       color: $secondary-color;
@@ -109,35 +112,12 @@ footer {
         }
         &:hover {
           svg {
-            fill: $secondary-socials-color-hover;
+            fill: $secondary-color-hover;
           }
         }
       }
     }
   }
-}
-
-span.divider {
-  display: block;
-  width: 60rem;
-  height: 0.1rem;
-  background-color: $primary-color;
-  opacity: 0.3;
-  margin: 3rem auto 4.8rem auto;
-}
-
-h1 {
-  font-size: $h1-font;
-  color: $primary-color;
-  text-align: center;
-  margin: auto;
-}
-
-p {
-  display: block;
-  font-size: $p-font;
-  color: $primary-color;
-  text-align: center;
 }
 
 form {
@@ -161,7 +141,7 @@ form {
     margin: 2rem 0;
     border-radius: 1.5rem;
     border: none;
-    color: white;
+    color: $button-font-color;
     font-size: $p-font;
     &:hover {
       cursor: pointer;
@@ -169,14 +149,23 @@ form {
   }
 }
 
-@media screen and (max-width: 800px) {
-  header {
-    .logo-desktop {
-      display: none;
-    }
+@media screen and (max-width: 768px) {
+  span.divider {
+    width: 30rem;
+  }
 
-    .logo-mobile {
-      display: block;
+  footer {
+    @include flex(center, center, column);
+    .contact {
+      p {
+        text-align: center;
+      }
+    }
+    ul.socials {
+      margin-bottom: 2rem;
+      li:nth-child(2) {
+        margin-right: 0;
+      }
     }
   }
 }

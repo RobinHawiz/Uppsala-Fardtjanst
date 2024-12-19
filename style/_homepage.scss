@@ -4,9 +4,9 @@ h1.homepage-title {
 
 form {
   button {
-    background-color: $primary-button-color;
+    background-color: $button-background-color;
     &:hover {
-      background-color: $primary-button-color-hover;
+      background-color: $button-background-color-hover;
     }
   }
 }

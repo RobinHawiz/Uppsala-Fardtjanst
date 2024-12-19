@@ -1,0 +1,23 @@
+main {
+  .accordion-container {
+    max-width: 60rem;
+    margin: auto;
+    .accordion {
+      @include flex(center, normal, row);
+      background-color: $button-background-color;
+      color: $button-font-color;
+      font-weight: 700;
+      border: none;
+      padding: 1.5rem 3rem;
+
+      .accordion-title {
+        margin-left: 1rem;
+      }
+
+      &:hover {
+        background-color: $button-background-color-hover;
+        cursor: pointer;
+      }
+    }
+  }
+}

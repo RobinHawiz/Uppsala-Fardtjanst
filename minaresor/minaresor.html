@@ -17,34 +17,94 @@
         type="text/css"
       />
     </noscript>
-    <link rel="stylesheet" href="style/style.css" />
-    <link rel="icon" type="image/x-icon" href="icon/favicon.ico" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="icon" type="image/x-icon" href="../icon/favicon.ico" />
     <title>Uppsala färdtjänst</title>
   </head>
   <body>
     <header>
-      <a class="logo logo-desktop" href="index.html">
-        <img src="img/logo_desktop.svg" alt="Uppsala kommuns logga" />
+      <a class="logo logo-desktop" href="../minaresor/minaresor.html">
+        <img src="../img/logo_desktop.svg" alt="Uppsala kommuns logga" />
       </a>
-      <a class="logo logo-mobile" href="index.html">
-        <img src="img/logo_mobile.svg" alt="Uppsala kommuns logga" />
+      <a class="logo logo-mobile" href="../minaresor/minaresor.html">
+        <img src="../img/logo_mobile.svg" alt="Uppsala kommuns logga" />
       </a>
+      <button class="burgerking">
+        <span class="menu">Meny</span>
+        <span class="line-container">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </span>
+      </button>
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="minaresor.html">Mina resor</a>
+            <span class="nav-divider"></span>
+          </li>
+
+          <li>
+            <a href="bokafardtjanst/bokafardtjanst.html">Boka färdtjänst</a>
+            <span class="nav-divider"></span>
+          </li>
+
+          <li>
+            <a href="aterkommanderesor/aterkommanderesor.html"
+              >Återkommande resor</a
+            >
+            <span class="nav-divider"></span>
+          </li>
+
+          <li>
+            <a href="minprofil/minprofil">Min profil</a>
+            <span class="nav-divider"></span>
+          </li>
+
+          <li>
+            <a href="kontakt/kontakt.html">Kontakt</a>
+            <span class="nav-divider"></span>
+          </li>
+
+          <li>
+            <a href="omfardtjanst/omfardtjanst.html">Om färdtjänst</a>
+            <span class="nav-divider"></span>
+          </li>
+
+          <li>
+            <a href="avgifterforfardtjanst/avgifterforfardtjanst.html"
+              >Avgifter för färdtjänst</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
-      <h1 class="homepage-title">
-        Välkommen till Färdtjänstresor i Uppsala Kommun
-      </h1>
+      <h1>Mina resor</h1>
       <span class="divider"></span>
-      <form action="minaresor/minaresor.html">
-        <div class="bankid-box input-box">
-          <label for="bankid"
-            >Logga in med ditt BankID genom att ange ditt personnummer, 12
-            siffror</label
-          >
-          <input id="bankid" type="text" placeholder="yyyymmmddxxxx" />
+      <div class="accordion-container">
+        <button
+          id="accordion-upcoming-trips"
+          class="accordion"
+          aria-expanded="false"
+          aria-controls="panel-upcoming-trips"
+        >
+          <img
+            class="accordion-icon"
+            src="../icon/iconmonstr-arrow-down.svg"
+            alt="ikon som pekar nedåt"
+          />
+          <span class="accordion-title">Visa kommande resor</span>
+        </button>
+        <div
+          id="panel-upcoming-trips"
+          class="accordion-panel"
+          aria-labelledby="accordion-upcoming-trips"
+        >
+          <h3>Måndag, 3 Mars 2025</h3>
+          <div class="trip"></div>
         </div>
-        <button name="login" type="submit">Logga in</button>
-      </form>
+      </div>
     </main>
     <footer>
       <div class="contact">
@@ -93,5 +153,6 @@
         </li>
       </ul>
     </footer>
+    <script src="../js/navbar.js"></script>
   </body>
 </html>

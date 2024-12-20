@@ -157,7 +157,7 @@ form section {
 }
 .radio-buttons label:has(input:focus) {
   transition: none;
-  border: 0.2rem solid #202e45;
+  outline: 0.2rem solid #202e45;
 }
 .radio-buttons label:hover {
   background-color: #d6d1ff;

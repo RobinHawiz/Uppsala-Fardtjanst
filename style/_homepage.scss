@@ -10,3 +10,9 @@ form {
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  h1.homepage-title {
+    width: 90%;
+  }
+}

@@ -100,7 +100,6 @@ form button {
   padding: 1.5rem 6.8rem;
   margin: 2rem 0;
   border-radius: 1.5rem;
-  font-size: 2rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -130,6 +129,16 @@ form button {
   span.divider {
     width: 30rem;
     margin: 2.5rem auto 4.3rem auto;
+  }
+  form {
+    font-size: 1.8rem;
+  }
+  form .input-box label {
+    text-align: center;
+    width: 90%;
+  }
+  form .input-box input {
+    font-size: 1.8rem;
   }
 }
 header {
@@ -368,6 +377,11 @@ form button:hover {
   background-color: #7c79ad;
 }
 
+@media screen and (max-width: 768px) {
+  h1.homepage-title {
+    width: 90%;
+  }
+}
 main .accordion-container {
   width: 60rem;
 }

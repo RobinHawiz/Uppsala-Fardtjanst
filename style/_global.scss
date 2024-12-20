@@ -128,7 +128,6 @@ form {
     padding: 1.5rem 6.8rem;
     margin: 2rem 0;
     border-radius: 1.5rem;
-    font-size: $p-font;
   }
 }
 
@@ -162,5 +161,17 @@ form {
   span.divider {
     width: 30rem;
     margin: 2.5rem auto 4.3rem auto;
+  }
+  form {
+    font-size: $p-mobile-font;
+    .input-box {
+      label {
+        text-align: center;
+        width: 90%;
+      }
+      input {
+        font-size: $p-mobile-font;
+      }
+    }
   }
 }

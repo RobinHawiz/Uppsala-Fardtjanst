@@ -1,0 +1,60 @@
+footer {
+  position: relative;
+  @include flex(center, space-between, row);
+  width: 102.4rem;
+  min-height: 10vh;
+  margin: auto;
+  z-index: 3;
+  .contact {
+    margin: 2rem 0 2rem 2rem;
+    p {
+      text-align: left;
+      color: $secondary-color;
+      a {
+        color: $secondary-color;
+      }
+    }
+  }
+  ul.socials {
+    @include flex(center, space-between, row);
+    list-style: none;
+    li {
+      margin-right: 2rem;
+      a {
+        @include flex(center, center, column);
+        svg {
+          fill: $secondary-color;
+        }
+        &:hover {
+          svg {
+            fill: $secondary-color-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  footer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    @include flex(center, center, column);
+    .contact {
+      p {
+        text-align: center;
+        font-size: calc($p-font - 0.2rem);
+      }
+    }
+    ul.socials {
+      margin-bottom: 2rem;
+      li:nth-child(2) {
+        margin-right: 0;
+      }
+    }
+  }
+}

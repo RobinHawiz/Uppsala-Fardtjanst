@@ -5,6 +5,8 @@ $h2-font: 2.8rem;
 $h3-font: 2.4rem;
 $p-font: 2rem;
 
+$p-mobile-font: calc(2rem - 0.2rem);
+
 $primary-color: #202e45;
 $secondary-color: #f4f3ff;
 $secondary-color-hover: #d6d1ff;
@@ -13,10 +15,15 @@ $button-background-color: #4c4698;
 $button-background-color-hover: #7c79ad;
 $button-font-color: white;
 
+$book-button-background-color: #627b1e;
+$book-button-background-color-hover: #799825;
+
 $nav-font-color: #a8c7fa;
 $nav-divider-color: #4c4698;
 
 $menu-font-color: white;
+
+$card-background-color: white;
 
 //Global functions
 
@@ -43,20 +50,24 @@ html {
 body {
   font-family: "Source Sans 3", sans-serif;
   background-color: $primary-color;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 h1 {
   font-size: $h1-font;
   color: $primary-color;
   text-align: center;
-  margin: auto;
 }
 
 h3 {
   font-size: $h3-font;
   color: $primary-color;
   font-weight: 400;
+}
+
+ul {
+  font-size: $p-font;
+  font-weight: 700;
 }
 
 p {
@@ -66,14 +77,24 @@ p {
   text-align: center;
 }
 
+button {
+  font-size: $p-font;
+  color: $button-font-color;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
 span {
   font-size: $p-font;
 }
 
 main {
+  @include flex(center, normal, column);
   padding-top: 10rem;
+  padding-bottom: 10rem;
   width: 102.4rem;
-  min-height: 70vh;
+  min-height: 65vh;
   margin: auto;
   background-color: $secondary-color;
 }
@@ -85,41 +106,6 @@ span.divider {
   background-color: $primary-color;
   opacity: 0.3;
   margin: 3rem auto 4.8rem auto;
-}
-
-footer {
-  @include flex(center, space-between, row);
-  width: 102.4rem;
-  min-height: 10vh;
-  margin: auto;
-  .contact {
-    margin: 2rem 0 2rem 2rem;
-    p {
-      text-align: left;
-      color: $secondary-color;
-      a {
-        color: $secondary-color;
-      }
-    }
-  }
-  ul.socials {
-    @include flex(center, space-between, row);
-    list-style: none;
-    li {
-      margin-right: 2rem;
-      a {
-        @include flex(center, center, column);
-        svg {
-          fill: $secondary-color;
-        }
-        &:hover {
-          svg {
-            fill: $secondary-color-hover;
-          }
-        }
-      }
-    }
-  }
 }
 
 form {
@@ -142,12 +128,7 @@ form {
     padding: 1.5rem 6.8rem;
     margin: 2rem 0;
     border-radius: 1.5rem;
-    border: none;
-    color: $button-font-color;
     font-size: $p-font;
-    &:hover {
-      cursor: pointer;
-    }
   }
 }
 
@@ -155,28 +136,31 @@ form {
   main {
     width: 100%;
   }
-  footer {
-    width: 100%;
-  }
 }
 
 @media screen and (max-width: 768px) {
-  span.divider {
-    width: 30rem;
+  main {
+    padding: 5rem 0;
+  }
+  h1 {
+    font-size: calc($h1-font - 1.4rem);
+  }
+  ul {
+    font-size: $p-mobile-font;
+  }
+  p {
+    font-size: $p-mobile-font;
   }
 
-  footer {
-    @include flex(center, center, column);
-    .contact {
-      p {
-        text-align: center;
-      }
-    }
-    ul.socials {
-      margin-bottom: 2rem;
-      li:nth-child(2) {
-        margin-right: 0;
-      }
-    }
+  button {
+    font-size: $p-mobile-font;
+  }
+
+  span {
+    font-size: $p-mobile-font;
+  }
+  span.divider {
+    width: 30rem;
+    margin: 2.5rem auto 4.3rem auto;
   }
 }

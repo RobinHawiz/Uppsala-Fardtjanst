@@ -1,4 +1,6 @@
-* {
+*,
+*:before,
+*:after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -19,6 +21,12 @@ h1 {
   font-size: 4.8rem;
   color: #202e45;
   text-align: center;
+}
+
+h2 {
+  font-size: 2.8rem;
+  color: #202e45;
+  margin-bottom: 2rem;
 }
 
 h3 {
@@ -73,33 +81,120 @@ span.divider {
   margin: 3rem auto 4.8rem auto;
 }
 
+button.book-trip {
+  padding: 1.5rem 6.8rem;
+  background-color: #627b1e;
+  border-radius: 1.5rem;
+  text-align: center;
+}
+button.book-trip:hover {
+  background-color: #799825;
+}
+
+button.login {
+  padding: 1.5rem 6.8rem;
+  margin: 2rem 0;
+  border-radius: 1.5rem;
+  background-color: #4c4698;
+}
+button.login:hover {
+  background-color: #7c79ad;
+}
+
 form {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 60rem;
   font-size: 2rem;
   color: #202e45;
 }
-form .input-box {
+form section {
   display: flex;
   align-items: center;
+  justify-content: normal;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+.input-boxes {
+  display: flex;
+  align-items: normal;
   justify-content: center;
   flex-direction: column;
 }
-form .input-box input {
-  width: 32rem;
-  height: 6.4rem;
-  text-align: center;
-  margin-top: 2rem;
+.input-boxes input {
+  padding-left: 1rem;
   border: 0.1rem solid #202e45;
   border-radius: 1.5rem;
   font-size: 2rem;
 }
-form button {
-  padding: 1.5rem 6.8rem;
-  margin: 2rem 0;
-  border-radius: 1.5rem;
+
+/* Radio button styling */
+.radio-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.radio-buttons label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+  padding: 1rem 2rem 1rem 1rem;
+  border-radius: 3.1rem;
+  transition: 0.25s ease;
+  font-weight: 700;
+}
+.radio-buttons label:has(input:checked) {
+  background-color: #d6d1ff;
+}
+.radio-buttons label:has(input:focus) {
+  transition: none;
+  border: 0.2rem solid #202e45;
+}
+.radio-buttons label:hover {
+  background-color: #d6d1ff;
+  cursor: pointer;
+}
+
+input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-right: 0.7rem;
+  border: 0.3rem solid #202e45;
+  border-radius: 50%;
+}
+
+input[type=radio]::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 1.73rem;
+  left: 1.6rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #202e45;
+}
+
+input[type=radio]:checked::before {
+  transform: scale(1);
+}
+
+input[type=radio]:focus {
+  outline: none;
 }
 
 @media screen and (max-width: 1024px) {
@@ -129,16 +224,6 @@ form button {
   span.divider {
     width: 30rem;
     margin: 2.5rem auto 4.3rem auto;
-  }
-  form {
-    font-size: 1.8rem;
-  }
-  form .input-box label {
-    text-align: center;
-    width: 90%;
-  }
-  form .input-box input {
-    font-size: 1.8rem;
   }
 }
 header {
@@ -381,16 +466,34 @@ h1.homepage-title {
   width: 68rem;
 }
 
-form button {
-  background-color: #4c4698;
+form.homepage-form input {
+  width: 32rem;
+  height: 6.4rem;
+  margin-top: 2rem;
+  align-self: center;
 }
-form button:hover {
-  background-color: #7c79ad;
+form.homepage-form input::-moz-placeholder {
+  text-align: center;
+  font-weight: 700;
+}
+form.homepage-form input::placeholder {
+  text-align: center;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 768px) {
   h1.homepage-title {
     width: 90%;
+  }
+  form {
+    font-size: 1.8rem;
+  }
+  form .input-box label {
+    text-align: center;
+    width: 90%;
+  }
+  form .input-box input {
+    font-size: 1.8rem;
   }
 }
 main .accordion-container {
@@ -458,15 +561,6 @@ main .accordion-container .accordion-panel a .card img {
 main .accordion-container .accordion-panel.hidden {
   display: none;
 }
-main .book-trip {
-  padding: 1.5rem 6.8rem;
-  background-color: #627b1e;
-  border-radius: 1.5rem;
-  text-align: center;
-}
-main .book-trip:hover {
-  background-color: #799825;
-}
 
 @media screen and (max-width: 768px) {
   main .accordion-container {
@@ -489,4 +583,33 @@ main .book-trip:hover {
   h3 {
     text-align: center;
   }
+}
+main form.bokafardtjanst-form .input-boxes label {
+  font-weight: 700;
+}
+main form.bokafardtjanst-form .input-boxes input {
+  width: 40rem;
+  height: 4.5rem;
+}
+main form.bokafardtjanst-form .input-boxes input#from {
+  margin-bottom: 2rem;
+}
+main form.bokafardtjanst-form .radio-and-input {
+  width: 100%;
+}
+main form.bokafardtjanst-form .radio-and-input .input-boxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+main form.bokafardtjanst-form .radio-and-input .input-boxes .input-box {
+  display: flex;
+  align-items: normal;
+  justify-content: normal;
+  flex-direction: column;
+}
+main form.bokafardtjanst-form .radio-and-input .input-boxes .input-box input {
+  width: 15rem;
 }/*# sourceMappingURL=style.css.map */

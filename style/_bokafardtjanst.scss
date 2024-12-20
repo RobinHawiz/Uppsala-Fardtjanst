@@ -1,0 +1,30 @@
+main {
+  form.bokafardtjanst-form {
+    .input-boxes {
+      label {
+        font-weight: 700;
+      }
+      input {
+        width: 40rem;
+        height: 4.5rem;
+      }
+      input#from {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .radio-and-input {
+      width: 100%;
+      .input-boxes {
+        @include flex(center, center, row);
+        gap: 2rem;
+        .input-box {
+          @include flex(normal, normal, column);
+          input {
+            width: 15rem;
+          }
+        }
+      }
+    }
+  }
+}

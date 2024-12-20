@@ -64,17 +64,6 @@ main {
       display: none;
     }
   }
-
-  .book-trip {
-    padding: 1.5rem 6.8rem;
-    background-color: $book-button-background-color;
-    border-radius: 1.5rem;
-    text-align: center;
-
-    &:hover {
-      background-color: $book-button-background-color-hover;
-    }
-  }
 }
 
 @media screen and (max-width: 768px) {

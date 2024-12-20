@@ -2,11 +2,15 @@ h1.homepage-title {
   width: 68rem;
 }
 
-form {
-  button {
-    background-color: $button-background-color;
-    &:hover {
-      background-color: $button-background-color-hover;
+form.homepage-form {
+  input {
+    width: 32rem;
+    height: 6.4rem;
+    margin-top: 2rem;
+    align-self: center;
+    &::placeholder {
+      text-align: center;
+      font-weight: 700;
     }
   }
 }
@@ -14,5 +18,17 @@ form {
 @media screen and (max-width: 768px) {
   h1.homepage-title {
     width: 90%;
+  }
+  form {
+    font-size: $p-mobile-font;
+    .input-box {
+      label {
+        text-align: center;
+        width: 90%;
+      }
+      input {
+        font-size: $p-mobile-font;
+      }
+    }
   }
 }

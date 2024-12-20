@@ -243,6 +243,17 @@ header nav ul.nav-links li a {
   color: #a8c7fa;
   text-decoration: none;
 }
+header nav ul.nav-links li a.active {
+  color: #ffdd00;
+}
+header nav ul.nav-links li a.active:hover {
+  color: #ffdd00;
+  text-decoration: underline;
+}
+header nav ul.nav-links li a:hover {
+  color: white;
+  text-decoration: underline;
+}
 header nav ul.nav-links li span.nav-divider {
   display: block;
   margin-top: 2rem;

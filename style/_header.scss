@@ -84,6 +84,17 @@ header {
         a {
           color: $nav-font-color;
           text-decoration: none;
+          &.active {
+            color: $nav-active-font-color;
+            &:hover {
+              color: $nav-active-font-color;
+              text-decoration: underline;
+            }
+          }
+          &:hover {
+            color: $nav-font-color-hover;
+            text-decoration: underline;
+          }
         }
         span.nav-divider {
           display: block;

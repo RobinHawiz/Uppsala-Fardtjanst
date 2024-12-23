@@ -17,6 +17,13 @@
         type="text/css"
       />
     </noscript>
+
+    <!-- Flatpickr -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="icon" type="image/x-icon" href="../icon/favicon.ico" />
     <title>Uppsala färdtjänst</title>
@@ -40,12 +47,14 @@
       <nav>
         <ul class="nav-links">
           <li>
-            <a class="active" href="../minaresor/minaresor.html">Mina resor</a>
+            <a href="../minaresor/minaresor.html">Mina resor</a>
             <span class="nav-divider"></span>
           </li>
 
           <li>
-            <a href="../bokafardtjanst/bokafardtjanst.html">Boka färdtjänst</a>
+            <a class="active" href="../bokafardtjanst/bokafardtjanst.html"
+              >Boka färdtjänst</a
+            >
             <span class="nav-divider"></span>
           </li>
 
@@ -82,26 +91,26 @@
     <main>
       <h1>Boka färdtjänst</h1>
       <span class="divider"></span>
-      <form class="bokafardtjanst-form" action="">
-        <section>
-          <h2>Vart vill du resa?</h2>
-          <div class="input-boxes">
-            <label for="from">Från</label>
-            <input id="from" type="text" />
-            <label for="to">Till</label>
-            <input id="to" type="text" />
+      <form class="booking-form" action="">
+        <fieldset class="where-to-travel">
+          <legend>Vart vill du resa?</legend>
+          <div class="input-container">
+            <div class="input-box">
+              <label for="from">Från</label>
+              <input id="from" type="text" />
+            </div>
+            <div class="input-box">
+              <label for="to">Till</label>
+              <input id="to" type="text" />
+            </div>
           </div>
-        </section>
-        <section>
-          <h2>När vill du åka?</h2>
+        </fieldset>
+        <fieldset>
+          <legend>När vill du åka?</legend>
           <div class="radio-and-input">
             <div class="radio-buttons">
               <label>
-                <input
-                  type="radio"
-                  checked="true"
-                  name="departure-or-arrival"
-                />
+                <input type="radio" name="departure-or-arrival" />
                 <span>Avgångstid</span>
               </label>
               <label>
@@ -109,17 +118,77 @@
                 <span>Ankomsttid</span>
               </label>
             </div>
-            <div class="input-boxes">
+            <div class="input-container">
               <div class="input-box">
                 <label for="day">Dag</label>
-                <input id="day" type="text" />
+                <input id="day" type="text" placeholder="yyyy-mm-dd" />
               </div>
               <div class="input-box">
                 <label for="time">Tid</label>
-                <input id="time" type="text" />
+                <input id="time" type="text" placeholder="hh:mm" />
               </div>
             </div>
           </div>
+        </fieldset>
+        <fieldset>
+          <legend>Vill du boka en returresa?</legend>
+          <div class="radio-and-input">
+            <div class="radio-buttons">
+              <label>
+                <input type="radio" name="yes-or-no" />
+                <span>Ja</span>
+              </label>
+              <label>
+                <input id="no" type="radio" name="yes-or-no" />
+                <span>Nej</span>
+              </label>
+            </div>
+            <div class="input-container">
+              <div class="input-box">
+                <label for="day">Avgång dag</label>
+                <input id="day" type="text" placeholder="yyyy-mm-dd" />
+              </div>
+              <div class="input-box">
+                <label for="time">Avgång tid</label>
+                <input id="time" type="text" placeholder="hh:mm" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Transportfordon</legend>
+          <div class="radio-buttons">
+            <label>
+              <input type="radio" name="car-or-carpooling" />
+              <span>Egen bil</span>
+            </label>
+            <label>
+              <input id="no" type="radio" name="car-or-carpooling" />
+              <span>Samåkning</span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend id="message-to-driver">Meddelande till föraren</legend>
+          <textarea
+            name="message"
+            id="message"
+            aria-labelledby="message-to-driver"
+            rows="5"
+            cols="40"
+          ></textarea>
+        </fieldset>
+        <section class="price-information">
+          <h2>Prisinformation</h2>
+          <p><span class="bold">Att betala</span>: 0kr</p>
+          <p>
+            <span class="bold">OBS!</span> Priset gäller för varje enskild resa.
+            <br />
+            Beloppet betalas direkt till chauffören.
+          </p>
+          <a href="#"
+            >Klicka här för att ta reda på hur biljettpriset beräknas.</a
+          >
         </section>
         <button class="book-trip">Boka</button>
       </form>
@@ -171,7 +240,12 @@
         </li>
       </ul>
     </footer>
+    <!-- Flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/sv.js"></script>
+    <!-- Js -->
     <script src="../js/navbar.js"></script>
-    <script src="../js/accordion.js"></script>
+    <script src="../js/datetimeFormatting.js"></script>
+    <script src="../js/displayInput.js"></script>
   </body>
 </html>

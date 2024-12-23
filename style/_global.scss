@@ -5,6 +5,8 @@ $h2-font: 2.8rem;
 $h3-font: 2.4rem;
 $p-font: 2rem;
 
+$h1-mobile-font: calc($h1-font - 1.4rem);
+$h2-mobile-font: calc($h2-font - 0.4rem);
 $p-mobile-font: calc(2rem - 0.2rem);
 
 $primary-color: #202e45;
@@ -26,6 +28,11 @@ $nav-divider-color: #4c4698;
 $menu-font-color: white;
 
 $card-background-color: white;
+
+$input-background-color: white;
+
+$link-color: #0a364c;
+$link-color-hover: #115679;
 
 //Global functions
 
@@ -63,10 +70,16 @@ h1 {
   text-align: center;
 }
 
-h2 {
+h1.homepage-title {
+  width: 68rem;
+}
+
+h2,
+legend {
   font-size: $h2-font;
   color: $primary-color;
   margin-bottom: 2rem;
+  font-weight: 700;
 }
 
 h3 {
@@ -87,6 +100,10 @@ p {
   text-align: center;
 }
 
+a {
+  text-align: center;
+}
+
 button {
   font-size: $p-font;
   color: $button-font-color;
@@ -97,6 +114,9 @@ button {
 
 span {
   font-size: $p-font;
+  &.bold {
+    font-weight: 700;
+  }
 }
 
 main {
@@ -139,89 +159,6 @@ button.login {
   }
 }
 
-form {
-  @include flex(center, center, column);
-  width: 60rem;
-  font-size: $p-font;
-  color: $primary-color;
-  section {
-    @include flex(center, normal, column);
-    width: 100%;
-    margin-bottom: 5rem;
-  }
-}
-
-.input-boxes {
-  @include flex(normal, center, column);
-  input {
-    padding-left: 1rem;
-    border: 0.1rem solid $primary-color;
-    border-radius: 1.5rem;
-    font-size: $p-font;
-  }
-}
-
-/* Radio button styling */
-
-.radio-buttons {
-  @include flex(center, center, row);
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  label {
-    @include flex(center, center, row);
-    position: relative;
-    padding: 1rem 2rem 1rem 1rem;
-    border-radius: 3.1rem;
-    transition: 0.25s ease;
-    &:has(input:checked) {
-      background-color: $secondary-color-hover;
-    }
-
-    &:has(input:focus) {
-      transition: none;
-      outline: 0.2rem solid $primary-color;
-    }
-
-    &:hover {
-      background-color: $secondary-color-hover;
-      cursor: pointer;
-    }
-    font-weight: 700;
-  }
-}
-
-input[type="radio"] {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 2.6rem;
-  height: 2.6rem;
-  margin-right: 0.7rem;
-  border: 0.3rem solid $primary-color;
-  border-radius: 50%;
-}
-
-input[type="radio"]::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 1.73rem;
-  left: 1.6rem;
-  width: 1.4rem;
-  height: 1.4rem;
-  border-radius: 50%;
-  transform: scale(0);
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em $primary-color;
-}
-
-input[type="radio"]:checked::before {
-  transform: scale(1);
-}
-
-input[type="radio"]:focus {
-  outline: none;
-}
-
 @media screen and (max-width: 1024px) {
   main {
     width: 100%;
@@ -233,12 +170,20 @@ input[type="radio"]:focus {
     padding: 5rem 0;
   }
   h1 {
-    font-size: calc($h1-font - 1.4rem);
+    font-size: $h1-mobile-font;
+  }
+  h1.homepage-title {
+    width: 90%;
+  }
+  h2,
+  legend {
+    font-size: $h2-mobile-font;
   }
   ul {
     font-size: $p-mobile-font;
   }
-  p {
+  p,
+  a {
     font-size: $p-mobile-font;
   }
 

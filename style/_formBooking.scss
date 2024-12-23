@@ -1,0 +1,63 @@
+form.booking-form {
+  fieldset.where-to-travel {
+    .input-container {
+      .input-box {
+        @include flex(normal, normal, column);
+        label {
+          font-weight: 700;
+        }
+        input {
+          width: 40rem;
+          height: 4.5rem;
+        }
+        input#from {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+
+  .radio-and-input {
+    @include flex(center, normal, column);
+    .input-container {
+      @include flex(center, center, row);
+      /* Changes to display flex when the user clicks on a radio button (in displayInput.js). */
+      display: none;
+      gap: 2rem;
+      .input-box {
+        @include flex(normal, normal, column);
+        input {
+          width: 20rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  form.booking-form {
+    fieldset.where-to-travel {
+      .input-container {
+        max-width: 40rem;
+        width: 80%;
+        .input-box {
+          input {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .radio-and-input {
+      .input-container {
+        width: 80%;
+        .input-box {
+          input {
+            max-width: 20rem;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

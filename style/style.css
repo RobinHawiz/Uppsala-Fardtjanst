@@ -23,10 +23,16 @@ h1 {
   text-align: center;
 }
 
-h2 {
+h1.homepage-title {
+  width: 68rem;
+}
+
+h2,
+legend {
   font-size: 2.8rem;
   color: #202e45;
   margin-bottom: 2rem;
+  font-weight: 700;
 }
 
 h3 {
@@ -47,6 +53,10 @@ p {
   text-align: center;
 }
 
+a {
+  text-align: center;
+}
+
 button {
   font-size: 2rem;
   color: white;
@@ -57,6 +67,9 @@ button {
 
 span {
   font-size: 2rem;
+}
+span.bold {
+  font-weight: 700;
 }
 
 main {
@@ -101,102 +114,6 @@ button.login:hover {
   background-color: #7c79ad;
 }
 
-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 60rem;
-  font-size: 2rem;
-  color: #202e45;
-}
-form section {
-  display: flex;
-  align-items: center;
-  justify-content: normal;
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 5rem;
-}
-
-.input-boxes {
-  display: flex;
-  align-items: normal;
-  justify-content: center;
-  flex-direction: column;
-}
-.input-boxes input {
-  padding-left: 1rem;
-  border: 0.1rem solid #202e45;
-  border-radius: 1.5rem;
-  font-size: 2rem;
-}
-
-/* Radio button styling */
-.radio-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-.radio-buttons label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  position: relative;
-  padding: 1rem 2rem 1rem 1rem;
-  border-radius: 3.1rem;
-  transition: 0.25s ease;
-  font-weight: 700;
-}
-.radio-buttons label:has(input:checked) {
-  background-color: #d6d1ff;
-}
-.radio-buttons label:has(input:focus) {
-  transition: none;
-  outline: 0.2rem solid #202e45;
-}
-.radio-buttons label:hover {
-  background-color: #d6d1ff;
-  cursor: pointer;
-}
-
-input[type=radio] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-       appearance: none;
-  width: 2.6rem;
-  height: 2.6rem;
-  margin-right: 0.7rem;
-  border: 0.3rem solid #202e45;
-  border-radius: 50%;
-}
-
-input[type=radio]::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 1.73rem;
-  left: 1.6rem;
-  width: 1.4rem;
-  height: 1.4rem;
-  border-radius: 50%;
-  transform: scale(0);
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em #202e45;
-}
-
-input[type=radio]:checked::before {
-  transform: scale(1);
-}
-
-input[type=radio]:focus {
-  outline: none;
-}
-
 @media screen and (max-width: 1024px) {
   main {
     width: 100%;
@@ -209,10 +126,18 @@ input[type=radio]:focus {
   h1 {
     font-size: 3.4rem;
   }
+  h1.homepage-title {
+    width: 90%;
+  }
+  h2,
+  legend {
+    font-size: 2.4rem;
+  }
   ul {
     font-size: 1.8rem;
   }
-  p {
+  p,
+  a {
     font-size: 1.8rem;
   }
   button {
@@ -462,44 +387,244 @@ footer ul.socials li a:hover svg {
     margin-right: 0;
   }
 }
-h1.homepage-title {
-  width: 68rem;
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 60rem;
+  font-size: 2rem;
+  color: #202e45;
+}
+form fieldset,
+form section {
+  display: flex;
+  align-items: center;
+  justify-content: normal;
+  flex-direction: column;
+  border: none;
+  width: 100%;
+  margin-bottom: 5rem;
+}
+form fieldset legend,
+form section legend {
+  margin: auto;
+  margin-bottom: 2rem;
+}
+form fieldset textarea,
+form section textarea {
+  resize: none;
+  padding-top: 0.4rem;
+  padding-left: 1rem;
+  border: 0.1rem solid #202e45;
+  border-radius: 1.5rem;
+  font-size: 2rem;
+  font-family: "Source Sans 3", sans-serif;
+}
+form section.price-information p {
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+}
+form section.price-information a {
+  color: #0a364c;
+}
+form section.price-information a:hover {
+  color: #115679;
+}
+form .input-container {
+  display: flex;
+  align-items: normal;
+  justify-content: center;
+  flex-direction: column;
+}
+form input {
+  height: 4.5rem;
+  padding-left: 1rem;
+  border: 0.1rem solid #202e45;
+  border-radius: 1.5rem;
+  font-size: 2rem;
 }
 
-form.homepage-form input {
+/* Radio button styling */
+.radio-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.radio-buttons label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+  padding: 1rem 2rem 1rem 1rem;
+  border-radius: 3.1rem;
+  transition: 0.25s ease;
+  font-weight: 700;
+}
+.radio-buttons label:has(input:checked) {
+  background-color: #d6d1ff;
+}
+.radio-buttons label:has(input:focus) {
+  transition: none;
+  outline: 0.2rem solid #202e45;
+}
+.radio-buttons label:hover {
+  background-color: #d6d1ff;
+  cursor: pointer;
+}
+
+input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-right: 0.7rem;
+  border: 0.3rem solid #202e45;
+  border-radius: 50%;
+  background-color: white;
+}
+
+input[type=radio]::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 1.73rem;
+  left: 1.6rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #202e45;
+}
+
+input[type=radio]:checked::before {
+  transform: scale(1);
+}
+
+input[type=radio]:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    width: 100%;
+  }
+  form textarea {
+    max-width: 42.8rem;
+    width: 80%;
+    height: 15rem;
+  }
+  form input {
+    font-size: 1.8rem;
+  }
+  input[type=radio]::before {
+    top: 1.6rem;
+    left: 1.6rem;
+  }
+}
+form.booking-form fieldset.where-to-travel .input-container .input-box {
+  display: flex;
+  align-items: normal;
+  justify-content: normal;
+  flex-direction: column;
+}
+form.booking-form fieldset.where-to-travel .input-container .input-box label {
+  font-weight: 700;
+}
+form.booking-form fieldset.where-to-travel .input-container .input-box input {
+  width: 40rem;
+  height: 4.5rem;
+}
+form.booking-form fieldset.where-to-travel .input-container .input-box input#from {
+  margin-bottom: 2rem;
+}
+form.booking-form .radio-and-input {
+  display: flex;
+  align-items: center;
+  justify-content: normal;
+  flex-direction: column;
+}
+form.booking-form .radio-and-input .input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  /* Changes to display flex when the user clicks on a radio button (in displayInput.js). */
+  display: none;
+  gap: 2rem;
+}
+form.booking-form .radio-and-input .input-container .input-box {
+  display: flex;
+  align-items: normal;
+  justify-content: normal;
+  flex-direction: column;
+}
+form.booking-form .radio-and-input .input-container .input-box input {
+  width: 20rem;
+}
+
+@media screen and (max-width: 768px) {
+  form.booking-form fieldset.where-to-travel .input-container {
+    max-width: 40rem;
+    width: 80%;
+  }
+  form.booking-form fieldset.where-to-travel .input-container .input-box input {
+    width: 100%;
+  }
+  form.booking-form .radio-and-input .input-container {
+    width: 80%;
+  }
+  form.booking-form .radio-and-input .input-container .input-box input {
+    max-width: 20rem;
+    width: 100%;
+  }
+}
+form.login-form .input-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+form.login-form .input-box label {
+  text-align: center;
+}
+form.login-form .input-box input {
   width: 32rem;
-  height: 6.4rem;
   margin-top: 2rem;
   align-self: center;
 }
-form.homepage-form input::-moz-placeholder {
+form.login-form .input-box input::-moz-placeholder {
   text-align: center;
   font-weight: 700;
 }
-form.homepage-form input::placeholder {
+form.login-form .input-box input::placeholder {
   text-align: center;
   font-weight: 700;
 }
 
 @media screen and (max-width: 768px) {
-  h1.homepage-title {
-    width: 90%;
-  }
-  form {
+  form.login-form {
     font-size: 1.8rem;
   }
-  form .input-box label {
-    text-align: center;
-    width: 90%;
+  form.login-form .input-box {
+    max-width: 32rem;
+    width: 80%;
   }
-  form .input-box input {
+  form.login-form .input-box input {
+    width: 100%;
     font-size: 1.8rem;
   }
 }
-main .accordion-container {
+.accordion-container {
   width: 60rem;
 }
-main .accordion-container .accordion {
+.accordion-container .accordion {
   display: flex;
   align-items: center;
   justify-content: normal;
@@ -509,25 +634,25 @@ main .accordion-container .accordion {
   background-color: #4c4698;
   padding: 1.5rem 3rem;
 }
-main .accordion-container .accordion .accordion-title {
+.accordion-container .accordion .accordion-title {
   margin-left: 1rem;
 }
-main .accordion-container .accordion .accordion-icon {
+.accordion-container .accordion .accordion-icon {
   transition: 0.15s ease-in-out;
 }
-main .accordion-container .accordion:hover {
+.accordion-container .accordion:hover {
   background-color: #7c79ad;
 }
-main .accordion-container .accordion[aria-expanded=true] .accordion-icon {
+.accordion-container .accordion[aria-expanded=true] .accordion-icon {
   transform: rotate(-180deg);
 }
-main .accordion-container .accordion-panel {
+.accordion-container .accordion-panel {
   margin-top: 2rem;
 }
-main .accordion-container .accordion-panel a {
+.accordion-container .accordion-panel a {
   text-decoration: none;
 }
-main .accordion-container .accordion-panel a .card {
+.accordion-container .accordion-panel a .card {
   display: flex;
   align-items: normal;
   justify-content: space-between;
@@ -539,43 +664,43 @@ main .accordion-container .accordion-panel a .card {
   border-radius: 1.5rem;
   background-color: white;
 }
-main .accordion-container .accordion-panel a .card .card-info-container .card-info {
+.accordion-container .accordion-panel a .card .card-info-container .card-info {
   display: flex;
   align-items: center;
   justify-content: normal;
   flex-direction: row;
 }
-main .accordion-container .accordion-panel a .card .card-info-container .card-info img {
+.accordion-container .accordion-panel a .card .card-info-container .card-info img {
   align-self: center;
   margin-right: 1rem;
 }
-main .accordion-container .accordion-panel a .card .card-info-container .card-info .from-to p {
+.accordion-container .accordion-panel a .card .card-info-container .card-info .from-to p {
   text-align: start;
 }
-main .accordion-container .accordion-panel a .card .card-info-container .card-info.destination {
+.accordion-container .accordion-panel a .card .card-info-container .card-info.destination {
   margin-bottom: 1rem;
 }
-main .accordion-container .accordion-panel a .card img {
+.accordion-container .accordion-panel a .card img {
   align-self: flex-start;
 }
-main .accordion-container .accordion-panel.hidden {
+.accordion-container .accordion-panel.hidden {
   display: none;
 }
 
 @media screen and (max-width: 768px) {
-  main .accordion-container {
+  .accordion-container {
     width: 95%;
   }
-  main .accordion-container .accordion-panel a .card {
+  .accordion-container .accordion-panel a .card {
     padding: 1.5rem 1rem;
   }
-  main .accordion-container .accordion-panel a .card .card-info-container .card-info img {
+  .accordion-container .accordion-panel a .card .card-info-container .card-info img {
     margin-top: 0.7rem;
     width: 2.4rem;
     height: 2.4rem;
     align-self: flex-start;
   }
-  main .accordion-container .accordion-panel a .card img {
+  .accordion-container .accordion-panel a .card img {
     width: 2.4rem;
     height: 2.4rem;
     margin-top: 0.5rem;
@@ -583,33 +708,4 @@ main .accordion-container .accordion-panel.hidden {
   h3 {
     text-align: center;
   }
-}
-main form.bokafardtjanst-form .input-boxes label {
-  font-weight: 700;
-}
-main form.bokafardtjanst-form .input-boxes input {
-  width: 40rem;
-  height: 4.5rem;
-}
-main form.bokafardtjanst-form .input-boxes input#from {
-  margin-bottom: 2rem;
-}
-main form.bokafardtjanst-form .radio-and-input {
-  width: 100%;
-}
-main form.bokafardtjanst-form .radio-and-input .input-boxes {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  gap: 2rem;
-}
-main form.bokafardtjanst-form .radio-and-input .input-boxes .input-box {
-  display: flex;
-  align-items: normal;
-  justify-content: normal;
-  flex-direction: column;
-}
-main form.bokafardtjanst-form .radio-and-input .input-boxes .input-box input {
-  width: 15rem;
 }/*# sourceMappingURL=style.css.map */

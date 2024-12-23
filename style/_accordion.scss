@@ -1,0 +1,97 @@
+.accordion-container {
+  width: 60rem;
+  .accordion {
+    @include flex(center, normal, row);
+    margin: auto;
+    margin-bottom: 3rem;
+    background-color: $button-background-color;
+    padding: 1.5rem 3rem;
+
+    .accordion-title {
+      margin-left: 1rem;
+    }
+
+    .accordion-icon {
+      transition: 0.15s ease-in-out;
+    }
+
+    &:hover {
+      background-color: $button-background-color-hover;
+    }
+  }
+
+  .accordion[aria-expanded="true"] .accordion-icon {
+    transform: rotate(-180deg);
+  }
+
+  .accordion-panel {
+    margin-top: 2rem;
+    a {
+      text-decoration: none;
+      .card {
+        @include flex(normal, space-between, row);
+        width: 100%;
+        margin-bottom: 2rem;
+        padding: 1rem 2rem;
+        border: solid $primary-color 0.1rem;
+        border-radius: 1.5rem;
+        background-color: $card-background-color;
+        .card-info-container {
+          .card-info {
+            @include flex(center, normal, row);
+            img {
+              align-self: center;
+              margin-right: 1rem;
+            }
+            .from-to {
+              p {
+                text-align: start;
+              }
+            }
+          }
+          .card-info.destination {
+            margin-bottom: 1rem;
+          }
+        }
+        img {
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+  .accordion-panel.hidden {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .accordion-container {
+    width: 95%;
+    .accordion-panel {
+      a {
+        .card {
+          padding: 1.5rem 1rem;
+          .card-info-container {
+            .card-info {
+              img {
+                margin-top: 0.7rem;
+                width: 2.4rem;
+                height: 2.4rem;
+                align-self: flex-start;
+              }
+            }
+          }
+          img {
+            width: 2.4rem;
+            height: 2.4rem;
+            margin-top: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  h3 {
+    text-align: center;
+  }
+}

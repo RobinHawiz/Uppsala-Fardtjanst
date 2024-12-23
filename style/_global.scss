@@ -98,6 +98,7 @@ p {
   font-size: $p-font;
   color: $primary-color;
   text-align: center;
+  line-height: 2.4rem;
 }
 
 a {
@@ -114,9 +115,10 @@ button {
 
 span {
   font-size: $p-font;
-  &.bold {
-    font-weight: 700;
-  }
+}
+
+.bold {
+  font-weight: 700;
 }
 
 main {

@@ -1,0 +1,54 @@
+main.min-profil {
+  .profile-information {
+    width: 60rem;
+    padding-bottom: 3rem;
+    .info-card {
+      @include flex(center, normal, row);
+      margin-bottom: 2rem;
+      p {
+        text-align: start;
+      }
+      img {
+        width: 4.5rem;
+        height: 4.5rem;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  section {
+    h2 {
+      text-align: center;
+    }
+    p {
+      margin: 0 1rem;
+      a {
+        color: $link-color;
+        &:hover {
+          color: $link-color-hover;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main.min-profil {
+    .profile-information {
+      width: 80%;
+      margin: auto;
+      .info-card {
+        @include flex(center, normal, row);
+        margin-bottom: 2rem;
+        p {
+          text-align: start;
+        }
+        img {
+          width: 4.5rem;
+          height: 4.5rem;
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

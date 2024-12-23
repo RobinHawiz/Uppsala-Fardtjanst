@@ -51,6 +51,7 @@ p {
   font-size: 2rem;
   color: #202e45;
   text-align: center;
+  line-height: 2.4rem;
 }
 
 a {
@@ -68,7 +69,8 @@ button {
 span {
   font-size: 2rem;
 }
-span.bold {
+
+.bold {
   font-weight: 700;
 }
 
@@ -707,5 +709,58 @@ form.login-form .input-box input::placeholder {
   }
   h3 {
     text-align: center;
+  }
+}
+main.min-profil .profile-information {
+  width: 60rem;
+  padding-bottom: 3rem;
+}
+main.min-profil .profile-information .info-card {
+  display: flex;
+  align-items: center;
+  justify-content: normal;
+  flex-direction: row;
+  margin-bottom: 2rem;
+}
+main.min-profil .profile-information .info-card p {
+  text-align: start;
+}
+main.min-profil .profile-information .info-card img {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-right: 1rem;
+}
+main.min-profil section h2 {
+  text-align: center;
+}
+main.min-profil section p {
+  margin: 0 1rem;
+}
+main.min-profil section p a {
+  color: #0a364c;
+}
+main.min-profil section p a:hover {
+  color: #115679;
+}
+
+@media screen and (max-width: 768px) {
+  main.min-profil .profile-information {
+    width: 80%;
+    margin: auto;
+  }
+  main.min-profil .profile-information .info-card {
+    display: flex;
+    align-items: center;
+    justify-content: normal;
+    flex-direction: row;
+    margin-bottom: 2rem;
+  }
+  main.min-profil .profile-information .info-card p {
+    text-align: start;
+  }
+  main.min-profil .profile-information .info-card img {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-right: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */

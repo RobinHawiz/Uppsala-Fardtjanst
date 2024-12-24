@@ -13,6 +13,28 @@ radioAndInputs.forEach((radioAndInput) => {
       label.addEventListener("click", () => {
         inputContainer.style.display = "none";
       });
+    } else if (!(label.querySelector("#weekly") === null)) {
+      // Hide monthly input
+      label.addEventListener("click", () => {
+        document.querySelector(".input-container.monthly").style.display =
+          "none";
+      });
+      // Show weekly input
+      label.addEventListener("click", () => {
+        document.querySelector(".input-container.weekly").style.display =
+          "flex";
+      });
+    } else if (!(label.querySelector("#monthly") === null)) {
+      // Hide weekly input
+      label.addEventListener("click", () => {
+        document.querySelector(".input-container.weekly").style.display =
+          "none";
+      });
+      // Show monthly input
+      label.addEventListener("click", () => {
+        document.querySelector(".input-container.monthly").style.display =
+          "flex";
+      });
     }
     // Otherwise we show an input, regardless of which radio button was chosen.
     // The radio button choice instead reflects what the input value represents.

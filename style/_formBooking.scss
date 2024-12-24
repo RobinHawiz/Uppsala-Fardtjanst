@@ -17,15 +17,81 @@ form.booking-form {
     }
   }
 
+  fieldset.how-often-to-travel {
+    .input-container {
+      @include flex(center, normal, column);
+      /* Changes to display flex when the user clicks on a radio button (from displayInput.js). */
+      display: none;
+      .input-box {
+        label {
+          font-weight: 700;
+        }
+        input {
+          width: 40rem;
+          height: 4.5rem;
+        }
+      }
+      .radio-buttons {
+        @include flex(normal, normal, column);
+        .row {
+          @include flex(normal, center, row);
+          gap: 1rem;
+        }
+      }
+
+      .calendar {
+        @include flex(center, flex-start, row);
+        width: 39rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+        input[type="checkbox"]:not(:checked),
+        input[type="checkbox"]:checked {
+          /* Can't do display:none because that'll make the checkboxes non-focusable with the keyboard (i.e. cant be accessed via tabbing). */
+          /* So instead I place the input somewhere far, far away, making it "dissappear". But it's still accessible via the label.*/
+          position: absolute;
+          /* It's over 9000! */
+          left: -9000%;
+        }
+        input[type="checkbox"] + label {
+          @include flex(center, center, column);
+          width: 3rem;
+          height: 3rem;
+          color: $primary-color;
+          background-color: $input-background-color;
+          box-sizing: border-box;
+          border-radius: 0.5rem;
+          box-shadow: inset 0 0 0 0.2rem $primary-color;
+          transition: all 0.175s ease;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        input[type="checkbox"] + label.day-last {
+          width: 20rem !important;
+        }
+        input[type="checkbox"]:checked + label {
+          background-color: $secondary-color-hover;
+          box-shadow: inset 0 0 0.6rem 0.2rem rgba(0, 0, 0, 0.25);
+        }
+        input[type="checkbox"]:focus + label {
+          background-color: $secondary-color-hover;
+        }
+      }
+    }
+  }
+
   .radio-and-input {
     @include flex(center, normal, column);
     .input-container {
       @include flex(center, center, row);
-      /* Changes to display flex when the user clicks on a radio button (in displayInput.js). */
+      /* Changes to display flex when the user clicks on a radio button (from displayInput.js). */
       display: none;
       gap: 2rem;
       .input-box {
         @include flex(normal, normal, column);
+        label {
+          font-weight: 700;
+        }
         input {
           width: 20rem;
         }
@@ -48,13 +114,55 @@ form.booking-form {
       }
     }
 
-    .radio-and-input {
+    fieldset.how-often-to-travel {
+      .radio-and-input {
+        .input-container {
+          .input-box {
+            input {
+              max-width: none;
+            }
+          }
+        }
+        .input-container.monthly {
+          .calendar {
+            width: 37rem;
+            label {
+              width: 2.8rem;
+              height: 2.8rem;
+              font-size: $p-mobile-font;
+            }
+          }
+        }
+      }
+    }
+    fieldset {
+      .radio-and-input {
+        .input-container {
+          width: 80%;
+          .input-box {
+            input {
+              max-width: 20rem;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 415px) {
+  form.booking-form {
+    fieldset.how-often-to-travel {
       .input-container {
-        width: 80%;
-        .input-box {
-          input {
-            max-width: 20rem;
-            width: 100%;
+        .radio-buttons {
+          gap: 0;
+          .row {
+            flex-wrap: wrap;
+            gap: 0;
+            label {
+              margin: 0.5rem 1rem;
+            }
           }
         }
       }

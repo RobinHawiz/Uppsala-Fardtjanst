@@ -7,6 +7,7 @@ $p-font: 2rem;
 
 $h1-mobile-font: calc($h1-font - 1.4rem);
 $h2-mobile-font: calc($h2-font - 0.4rem);
+$h3-mobile-font: calc($h3-font - 0.2rem);
 $p-mobile-font: calc(2rem - 0.2rem);
 
 $primary-color: #202e45;
@@ -33,6 +34,9 @@ $input-background-color: white;
 
 $link-color: #0a364c;
 $link-color-hover: #115679;
+
+$calendar-checkbox-background-color: #177db0;
+$calendar-checkbox-color: white;
 
 //Global functions
 
@@ -68,16 +72,19 @@ h1 {
   font-size: $h1-font;
   color: $primary-color;
   text-align: center;
+  margin: 0 1rem;
 }
 
 h1.homepage-title {
   width: 68rem;
+  margin: 0;
 }
 
 h2,
 legend {
   font-size: $h2-font;
   color: $primary-color;
+  margin: 0 1rem;
   margin-bottom: 2rem;
   font-weight: 700;
 }
@@ -86,6 +93,7 @@ h3 {
   font-size: $h3-font;
   color: $primary-color;
   font-weight: 400;
+  margin: 0 1rem;
 }
 
 ul {
@@ -180,6 +188,9 @@ button.login {
   h2,
   legend {
     font-size: $h2-mobile-font;
+  }
+  h3 {
+    font-size: $h3-mobile-font;
   }
   ul {
     font-size: $p-mobile-font;

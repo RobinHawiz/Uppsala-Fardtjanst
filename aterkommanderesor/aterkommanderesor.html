@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Makes the loading of google fonts non-render blocking -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap"
+        rel="stylesheet"
+        type="text/css"
+      />
+    </noscript>
+
+    <!-- Flatpickr -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="icon" type="image/x-icon" href="../icon/favicon.ico" />
+    <title>Uppsala färdtjänst</title>
+  </head>
+  <body>
+    <header>
+      <a class="logo logo-desktop" href="../minaresor/minaresor.html">
+        <img src="../img/logo_desktop.svg" alt="Uppsala kommuns logga" />
+      </a>
+      <a class="logo logo-mobile" href="../minaresor/minaresor.html">
+        <img src="../img/logo_mobile.svg" alt="Uppsala kommuns logga" />
+      </a>
+      <button class="burgerking">
+        <span class="menu">Meny</span>
+        <span class="line-container">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </span>
+      </button>
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="../minaresor/minaresor.html">Mina resor</a>
+            <span class="nav-divider"></span>
+          </li>
+
+          <li>
+            <a href="../bokafardtjanst/bokafardtjanst.html">Boka färdtjänst</a>
+            <span class="nav-divider"></span>
+          </li>
+
+          <li>
+            <a class="active" href="../aterkommanderesor/aterkommanderesor.html"
+              >Återkommande resor</a
+            >
+            <span class="nav-divider"></span>
+          </li>
+
+          <li>
+            <a href="../minprofil/minprofil.html">Min profil</a>
+            <span class="nav-divider"></span>
+          </li>
+
+          <li>
+            <a href="../kontakt/kontakt.html">Kontakt</a>
+            <span class="nav-divider"></span>
+          </li>
+
+          <li>
+            <a href="../omfardtjanst/omfardtjanst.html">Om färdtjänst</a>
+            <span class="nav-divider"></span>
+          </li>
+
+          <li>
+            <a href="../avgifterforfardtjanst/avgifterforfardtjanst.html"
+              >Avgifter för färdtjänst</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Återkommande resor</h1>
+      <span class="divider"></span>
+      <form class="booking-form" action="">
+        <fieldset class="where-to-travel">
+          <legend>Vart vill du resa?</legend>
+          <div class="input-container">
+            <div class="input-box">
+              <label for="from">Från</label>
+              <input id="from" type="text" />
+            </div>
+            <div class="input-box">
+              <label for="to">Till</label>
+              <input id="to" type="text" />
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>När vill du åka?</legend>
+          <div class="radio-and-input">
+            <div class="radio-buttons">
+              <label>
+                <input type="radio" name="departure-or-arrival" />
+                <span>Avgångstid</span>
+              </label>
+              <label>
+                <input type="radio" name="departure-or-arrival" />
+                <span>Ankomsttid</span>
+              </label>
+            </div>
+            <div class="input-container">
+              <div class="input-box">
+                <label for="day">Dag</label>
+                <input id="day" type="text" placeholder="yyyy-mm-dd" />
+              </div>
+              <div class="input-box">
+                <label for="time">Tid</label>
+                <input id="time" type="text" placeholder="hh:mm" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Vill du boka en returresa?</legend>
+          <div class="radio-and-input">
+            <div class="radio-buttons">
+              <label>
+                <input type="radio" name="yes-or-no" />
+                <span>Ja</span>
+              </label>
+              <label>
+                <input id="no" type="radio" name="yes-or-no" />
+                <span>Nej</span>
+              </label>
+            </div>
+            <div class="input-container">
+              <div class="input-box">
+                <label for="day">Avgång dag</label>
+                <input id="day" type="text" placeholder="yyyy-mm-dd" />
+              </div>
+              <div class="input-box">
+                <label for="time">Avgång tid</label>
+                <input id="time" type="text" placeholder="hh:mm" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="how-often-to-travel">
+          <legend>Hur ofta vill du resa?</legend>
+          <div class="radio-and-input">
+            <div class="radio-buttons">
+              <label>
+                <input id="weekly" type="radio" name="weekly-or-monthly" />
+                <span>Veckovis</span>
+              </label>
+              <label>
+                <input id="monthly" type="radio" name="weekly-or-monthly" />
+                <span>Månadsvis</span>
+              </label>
+            </div>
+            <div class="input-container weekly">
+              <div class="input-box">
+                <label for="week">Veckor framöver</label>
+                <input id="week" type="number" min="5" max="52" required />
+              </div>
+              <h3 class="bold">Välj vilka dagar i veckan som du vill resa</h3>
+              <div class="radio-buttons">
+                <div class="row">
+                  <label>
+                    <input type="checkbox" name="monday" />
+                    <span>Mån</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="tuesday" />
+                    <span>Tis</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="wednesday" />
+                    <span>Ons</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="thursday" />
+                    <span>Tors</span>
+                  </label>
+                </div>
+                <div class="row">
+                  <label>
+                    <input type="checkbox" name="friday" />
+                    <span>Fre</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="saturday" />
+                    <span>Lör</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="sunday" />
+                    <span>Sön</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="input-container monthly">
+              <div class="input-box">
+                <label for="monthly">Månader framöver</label>
+                <input id="monthly" type="number" min="5" max="52" required />
+              </div>
+              <h3 class="bold">Välj vilka dagar i månaden som du vill resa</h3>
+              <div class="calendar">
+                <input id="day-1" type="checkbox" value="1" />
+                <label for="day-1">1</label>
+                <input id="day-2" type="checkbox" value="2" />
+                <label for="day-2">2</label>
+                <input id="day-3" type="checkbox" value="3" />
+                <label for="day-3">3</label>
+                <input id="day-4" type="checkbox" value="4" />
+                <label for="day-4">4</label>
+                <input id="day-5" type="checkbox" value="5" />
+                <label for="day-5">5</label>
+                <input id="day-6" type="checkbox" value="6" />
+                <label for="day-6">6</label>
+                <input id="day-7" type="checkbox" value="7" />
+                <label for="day-7">7</label>
+                <input id="day-8" type="checkbox" value="8" />
+                <label for="day-8">8</label>
+                <input id="day-9" type="checkbox" value="9" />
+                <label for="day-9">9</label>
+                <input id="day-10" type="checkbox" value="10" />
+                <label for="day-10">10</label>
+                <input id="day-11" type="checkbox" value="11" />
+                <label for="day-11">11</label>
+                <input id="day-12" type="checkbox" value="12" />
+                <label for="day-12">12</label>
+                <input id="day-13" type="checkbox" value="13" />
+                <label for="day-13">13</label>
+                <input id="day-14" type="checkbox" value="14" />
+                <label for="day-14">14</label>
+                <input id="day-15" type="checkbox" value="15" />
+                <label for="day-15">15</label>
+                <input id="day-16" type="checkbox" value="16" />
+                <label for="day-16">16</label>
+                <input id="day-17" type="checkbox" value="17" />
+                <label for="day-17">17</label>
+                <input id="day-18" type="checkbox" value="18" />
+                <label for="day-18">18</label>
+                <input id="day-19" type="checkbox" value="19" />
+                <label for="day-19">19</label>
+                <input id="day-20" type="checkbox" value="20" />
+                <label for="day-20">20</label>
+                <input id="day-21" type="checkbox" value="21" />
+                <label for="day-21">21</label>
+                <input id="day-22" type="checkbox" value="2" />
+                <label for="day-22">22</label>
+                <input id="day-23" type="checkbox" value="23" />
+                <label for="day-23">23</label>
+                <input id="day-24" type="checkbox" value="24" />
+                <label for="day-24">24</label>
+                <input id="day-25" type="checkbox" value="25" />
+                <label for="day-25">25</label>
+                <input id="day-26" type="checkbox" value="26" />
+                <label for="day-26">26</label>
+                <input id="day-27" type="checkbox" value="27" />
+                <label for="day-27">27</label>
+                <input id="day-28" type="checkbox" value="28" />
+                <label for="day-28">28</label>
+                <input id="day-29" type="checkbox" value="29" />
+                <label for="day-29">29</label>
+                <input id="day-30" type="checkbox" value="30" />
+                <label for="day-30">30</label>
+                <input id="day-31" type="checkbox" value="31" />
+                <label for="day-31">31</label>
+                <input id="day-last" type="checkbox" value="last" />
+                <label class="day-last" for="day-last"
+                  >Sista dagen i månaden</label
+                >
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Transportfordon</legend>
+          <div class="radio-buttons">
+            <label>
+              <input type="radio" name="car-or-carpooling" />
+              <span>Egen bil</span>
+            </label>
+            <label>
+              <input id="no" type="radio" name="car-or-carpooling" />
+              <span>Samåkning</span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend id="message-to-driver">Meddelande till föraren</legend>
+          <textarea
+            name="message"
+            id="message"
+            aria-labelledby="message-to-driver"
+            rows="5"
+            cols="40"
+          ></textarea>
+        </fieldset>
+        <section class="price-information">
+          <h2>Prisinformation</h2>
+          <p><span class="bold">Att betala</span>: 0kr</p>
+          <p>
+            <span class="bold">OBS!</span> Priset gäller för varje enskild resa.
+            <br />
+            Beloppet betalas direkt till chauffören.
+          </p>
+          <a href="#"
+            >Klicka här för att ta reda på hur biljettpriset beräknas.</a
+          >
+        </section>
+        <button class="book-trip">Boka</button>
+      </form>
+    </main>
+    <footer>
+      <div class="contact">
+        <p>Kontaktcenter: <a href="tel:070-0000000">070-000 00 00</a></p>
+        <p>
+          E-post:
+          <a href="email:uppsala.kommun@uppsala.se"
+            >uppsala.kommun@uppsala.se</a
+          >
+        </p>
+      </div>
+      <ul class="socials">
+        <li>
+          <a href="https://www.facebook.com">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              role="img"
+              aria-label="Facebook icon"
+              width="40px"
+              height="40px"
+              viewBox="0 0 40 40"
+              version="1.1"
+            >
+              <path
+                d="M 20 0 C 8.953125 0 0 8.953125 0 20 C 0 31.046875 8.953125 40 20 40 C 31.046875 40 40 31.046875 40 20 C 40 8.953125 31.046875 0 20 0 Z M 25 13.332031 L 22.75 13.332031 C 21.851562 13.332031 21.667969 13.703125 21.667969 14.628906 L 21.667969 16.667969 L 25 16.667969 L 24.652344 20 L 21.667969 20 L 21.667969 31.667969 L 16.667969 31.667969 L 16.667969 20 L 13.332031 20 L 13.332031 16.667969 L 16.667969 16.667969 L 16.667969 12.820312 C 16.667969 9.871094 18.21875 8.332031 21.714844 8.332031 L 25 8.332031 Z M 25 13.332031 "
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="40px"
+              height="40px"
+              viewBox="0 0 40 40"
+              version="1.1"
+            >
+              <path
+                d="M 20 0 C 8.953125 0 0 8.953125 0 20 C 0 31.046875 8.953125 40 20 40 C 31.046875 40 40 31.046875 40 20 C 40 8.953125 31.046875 0 20 0 Z M 16.667969 26.667969 L 13.332031 26.667969 L 13.332031 16.667969 L 16.667969 16.667969 Z M 15 15.183594 C 13.988281 15.183594 13.167969 14.355469 13.167969 13.332031 C 13.167969 12.3125 13.988281 11.484375 15 11.484375 C 16.011719 11.484375 16.832031 12.3125 16.832031 13.332031 C 16.832031 14.355469 16.011719 15.183594 15 15.183594 Z M 28.332031 26.667969 L 25.003906 26.667969 L 25.003906 21.898438 C 25.003906 18.761719 21.667969 19.027344 21.667969 21.898438 L 21.667969 26.667969 L 18.332031 26.667969 L 18.332031 16.667969 L 21.667969 16.667969 L 21.667969 18.488281 C 23.121094 15.796875 28.332031 15.59375 28.332031 21.066406 Z M 28.332031 26.667969 "
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </footer>
+    <!-- Flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/sv.js"></script>
+    <!-- Js -->
+    <script src="../js/navbar.js"></script>
+    <script src="../js/datetimeFormatting.js"></script>
+    <script src="../js/displayInput.js"></script>
+  </body>
+</html>

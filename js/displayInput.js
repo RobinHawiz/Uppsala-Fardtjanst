@@ -13,7 +13,9 @@ radioAndInputs.forEach((radioAndInput) => {
       label.addEventListener("click", () => {
         inputContainer.style.display = "none";
       });
-    } else if (!(label.querySelector("#weekly") === null)) {
+    }
+    // Another special case for when we want to show a different input depending on which radio button is selected.
+    else if (!(label.querySelector("#weekly") === null)) {
       // Hide monthly input
       label.addEventListener("click", () => {
         document.querySelector(".input-container.monthly").style.display =
@@ -36,8 +38,7 @@ radioAndInputs.forEach((radioAndInput) => {
           "flex";
       });
     }
-    // Otherwise we show an input, regardless of which radio button was chosen.
-    // The radio button choice instead reflects what the input value represents.
+    // In all other cases we show an input, regardless of which radio button was chosen.
     else {
       // Show input
       label.addEventListener("click", () => {

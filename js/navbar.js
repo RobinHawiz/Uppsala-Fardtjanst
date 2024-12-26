@@ -13,9 +13,16 @@ const menuFontColor = "white";
 
 let animationComplete = true;
 
+// Setting initial attributes
+
+// Added the attributes here because I forgot to add it inside the HTML from the beginning. Otherwise I'd have to go through every single html page to add these.
+burgerking.setAttribute("aria-expanded", false);
+burgerking.setAttribute("aria-controls", "navbar");
+nav.setAttribute("id", "navbar");
+
 // Event listeners
 
-new ResizeObserver(setNavbarHeight).observe(main);
+new ResizeObserver(setNavbarHeight).observe(main); // Not an event listener per se, but is an instance/object that can be used to work in a similar way (but not really).
 burgerking.addEventListener("click", toggleNavbar);
 
 // Functions
@@ -58,6 +65,9 @@ function toggleNavbar() {
       { once: true }
     );
   }
+  // Toogles the aria-expanded attribute every time the user opens/closes the navbar.
+  let isOpen = burgerking.getAttribute("aria-expanded") === "true";
+  burgerking.setAttribute("aria-expanded", !isOpen);
   // Toggles styling for burgerking
   burgerking.classList.toggle("toggle");
   // Toggles the opening and closing of the navbar

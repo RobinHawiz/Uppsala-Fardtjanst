@@ -156,9 +156,11 @@ span.divider {
   margin: 3rem auto 4.8rem auto;
 }
 
-/* Styling for buttons */
+/* Styling for buttons and links that look like buttons */
 
-button {
+button,
+a.button {
+  text-decoration: none;
   font-size: $p-font;
   color: $button-font-color;
   font-weight: 700;
@@ -166,37 +168,37 @@ button {
   cursor: pointer;
 }
 
-button.book-trip,
-button.login,
-button.change-booking,
-button.cancel-booking {
+.book-trip,
+.login,
+.change-booking,
+.cancel-booking {
   padding: 1.5rem 6.8rem;
   border-radius: 1.5rem;
   text-align: center;
 }
 
-button.book-trip {
+.book-trip {
   background-color: $book-button-background-color;
   &:hover {
     background-color: $book-button-background-color-hover;
   }
 }
 
-button.login {
+.login {
   background-color: $button-background-color;
   &:hover {
     background-color: $button-background-color-hover;
   }
 }
 
-button.change-booking {
+.change-booking {
   background-color: $button-background-color;
   &:hover {
     background-color: $button-background-color-hover;
   }
 }
 
-button.cancel-booking {
+.cancel-booking {
   background-color: $cancel-button-background-color;
   &:hover {
     background-color: $cancel-button-background-color-hover;

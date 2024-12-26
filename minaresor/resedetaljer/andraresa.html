@@ -17,6 +17,13 @@
         type="text/css"
       />
     </noscript>
+
+    <!-- Flatpickr -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
     <link rel="stylesheet" href="../../style/style.css" />
     <link rel="icon" type="image/x-icon" href="../../icon/favicon.ico" />
     <title>Uppsala färdtjänst</title>
@@ -83,96 +90,67 @@
         </ul>
       </nav>
     </header>
-    <main class="bekräftad-resa">
-      <h1>Resedetaljer</h1>
+    <main class="ändra-resa">
+      <h1>Ändra resa</h1>
       <span class="divider"></span>
-      <div class="travel-information">
-        <div class="travel-status-info-cards">
-          <div class="info-card">
-            <img
-              src="../../icon/iconmonstr-check-mark.svg"
-              alt="Ikon av en grön bockmarkering"
-            />
-            <div class="info">
-              <p class="bold">Resan är bekräftad</p>
+      <form class="booking-form" action="">
+        <fieldset class="where-to-travel">
+          <legend>Ändra destination</legend>
+          <div class="input-container">
+            <div class="input-box">
+              <label for="from">Från</label>
+              <input id="from" type="text" />
+            </div>
+            <div class="input-box">
+              <label for="to">Till</label>
+              <input id="to" type="text" />
             </div>
           </div>
-          <div class="info-card">
-            <img src="../../icon/iconmonstr-time.svg" alt="Ikon av en klocka" />
-            <div class="info">
-              <p class="bold">Mån 3 mars 13:45</p>
+        </fieldset>
+        <fieldset>
+          <legend>Ändra avgångs- eller ankomsttid</legend>
+          <div class="radio-and-input">
+            <div class="radio-buttons">
+              <label>
+                <input type="radio" name="departure-or-arrival" />
+                <span>Avgångstid</span>
+              </label>
+              <label>
+                <input type="radio" name="departure-or-arrival" />
+                <span>Ankomsttid</span>
+              </label>
+            </div>
+            <div class="input-container">
+              <div class="input-box">
+                <label for="day">Dag</label>
+                <input id="day" type="text" placeholder="yyyy-mm-dd" />
+              </div>
+              <div class="input-box">
+                <label for="time">Tid</label>
+                <input id="time" type="text" placeholder="hh:mm" />
+              </div>
             </div>
           </div>
-        </div>
-        <div class="destination-info-cards">
-          <div class="info-card">
-            <img
-              src="../../icon/iconmonstr-door-from.svg"
-              alt="Ikon av en dörr med en pil som pekar ut ur dörren"
-            />
-            <div class="info">
-              <p><span class="bold">Från</span>: Karlsrogatan 81, Uppsala</p>
-            </div>
-          </div>
-          <div class="info-card">
-            <img
-              src="../../icon/iconmonstr-door-to.svg"
-              alt="Ikon av en dörr med en pil som pekar in mot dörren"
-            />
-            <div class="info">
-              <p>
-                <span class="bold">Till</span>: Ingång 85 Akademiska sjukhuset,
-                Uppsala
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="info-card">
-          <img
-            src="../../icon/iconmonstr-credit-card.svg"
-            alt="Ikon av ett kreditkort"
-          />
-          <div class="info">
-            <p><span class="bold">Egenavgift</span>: 0 Sek, Färdtjänst</p>
-          </div>
-        </div>
-        <div class="info-card">
-          <img src="../../icon/iconmonstr-phone.svg" alt="Ikon av en telefon" />
-          <div class="info">
-            <p><span class="bold">Ditt tel</span>: 070-987 65 43</p>
-          </div>
-        </div>
-        <div class="info-card">
-          <img
-            src="../../icon/iconmonstr-accessibility-circle-filled.svg"
-            alt="Ikon av en cirkel med en symbol av en person i mitten"
-          />
-          <div class="info">
-            <p><span class="bold">Behov</span>: Rullstol, Ledsagare</p>
-          </div>
-        </div>
-        <div class="info-card">
-          <img
-            class="message"
-            src="../../icon/iconmonstr-email.svg"
-            alt="Ikon av ett kuvert"
-          />
-          <div class="info">
-            <p>
-              <span class="bold">Meddelande</span>: Behöver ledsagare till/från
-              dörren, hjälp med baggage, etc...
-            </p>
-          </div>
-        </div>
+        </fieldset>
+        <fieldset>
+          <legend id="message-to-driver">
+            Ändra ditt meddelande till föraren
+          </legend>
+          <textarea
+            name="message"
+            id="message"
+            aria-labelledby="message-to-driver"
+            rows="5"
+            cols="40"
+          ></textarea>
+        </fieldset>
         <div class="button-container">
-          <a href="andraresa.html" class="button change-booking">Ändra</a>
-          <a href="avbokadresa.html" class="button cancel-booking">Avboka</a>
+          <a href="bekraftadresa.html" class="button cancel-booking">Avbryt</a>
+          <a href="bekraftadresa.html" class="button book-trip"
+            >Godkänn ändringar</a
+          >
         </div>
-        <p class="notice">
-          Du kan avbeställa fram till
-          <span class="bold">cirka 20 min innan</span> upphämtning
-        </p>
-      </div>
+      </form>
     </main>
     <footer>
       <div class="contact">
@@ -221,6 +199,12 @@
         </li>
       </ul>
     </footer>
+    <!-- Flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/sv.js"></script>
+    <!-- Js -->
     <script src="../../js/navbar.js"></script>
+    <script src="../../js/datetimeFormatting.js"></script>
+    <script src="../../js/displayInput.js"></script>
   </body>
 </html>

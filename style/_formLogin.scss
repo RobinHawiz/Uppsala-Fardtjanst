@@ -6,6 +6,7 @@ form.login-form {
     }
     input {
       width: 32rem;
+      height: 5rem;
       margin-top: 2rem;
       align-self: center;
       &::placeholder {
@@ -13,6 +14,9 @@ form.login-form {
         font-weight: 700;
       }
     }
+  }
+  button {
+    margin-top: 3rem;
   }
 }
 

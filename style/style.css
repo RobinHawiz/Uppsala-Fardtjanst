@@ -102,8 +102,10 @@ span.divider {
   margin: 3rem auto 4.8rem auto;
 }
 
-/* Styling for buttons */
-button {
+/* Styling for buttons and links that look like buttons */
+button,
+a.button {
+  text-decoration: none;
   font-size: 2rem;
   color: white;
   font-weight: 700;
@@ -111,40 +113,40 @@ button {
   cursor: pointer;
 }
 
-button.book-trip,
-button.login,
-button.change-booking,
-button.cancel-booking {
+.book-trip,
+.login,
+.change-booking,
+.cancel-booking {
   padding: 1.5rem 6.8rem;
   border-radius: 1.5rem;
   text-align: center;
 }
 
-button.book-trip {
+.book-trip {
   background-color: #627b1e;
 }
-button.book-trip:hover {
+.book-trip:hover {
   background-color: #799825;
 }
 
-button.login {
+.login {
   background-color: #4c4698;
 }
-button.login:hover {
+.login:hover {
   background-color: #7c79ad;
 }
 
-button.change-booking {
+.change-booking {
   background-color: #4c4698;
 }
-button.change-booking:hover {
+.change-booking:hover {
   background-color: #7c79ad;
 }
 
-button.cancel-booking {
+.cancel-booking {
   background-color: #f00400;
 }
-button.cancel-booking:hover {
+.cancel-booking:hover {
   background-color: #ff4a47;
 }
 
@@ -450,6 +452,7 @@ form fieldset legend,
 form section legend {
   margin: auto;
   margin-bottom: 2rem;
+  text-align: center;
 }
 form fieldset textarea,
 form section textarea {
@@ -575,6 +578,11 @@ input[type=radio]:focus,
   .radio-buttons input[type=checkbox]::before {
     top: 1.6rem;
     left: 1.6rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  form {
+    font-size: 1.8rem;
   }
 }
 form.booking-form fieldset.where-to-travel .input-container .input-box {
@@ -743,6 +751,7 @@ form.login-form .input-box label {
 }
 form.login-form .input-box input {
   width: 32rem;
+  height: 5rem;
   margin-top: 2rem;
   align-self: center;
 }
@@ -753,6 +762,9 @@ form.login-form .input-box input::-moz-placeholder {
 form.login-form .input-box input::placeholder {
   text-align: center;
   font-weight: 700;
+}
+form.login-form button {
+  margin-top: 3rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -1110,7 +1122,7 @@ main.bekräftad-resa .travel-information .button-container {
   justify-content: normal;
   flex-direction: column;
 }
-main.bekräftad-resa .travel-information .button-container button:first-child {
+main.bekräftad-resa .travel-information .button-container a:first-child {
   margin-bottom: 3rem;
 }
 main.bekräftad-resa .travel-information p.notice {
@@ -1282,4 +1294,13 @@ main.avbokad-resa section p a:hover {
   main.avbokad-resa .travel-information .info-card p {
     text-align: start;
   }
+}
+main.ändra-resa .button-container {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  gap: 3rem;
 }/*# sourceMappingURL=style.css.map */

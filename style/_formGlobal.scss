@@ -13,6 +13,7 @@ form {
     legend {
       margin: auto;
       margin-bottom: 2rem;
+      text-align: center;
     }
 
     textarea {
@@ -143,5 +144,11 @@ input[type="radio"]:focus,
   .radio-buttons input[type="checkbox"]::before {
     top: 1.6rem;
     left: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    font-size: $p-mobile-font;
   }
 }

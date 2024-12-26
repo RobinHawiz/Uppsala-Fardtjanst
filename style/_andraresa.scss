@@ -1,0 +1,8 @@
+main.ändra-resa {
+  .button-container {
+    margin-bottom: 2rem;
+    @include flex(center, center, row);
+    flex-wrap: wrap-reverse;
+    gap: 3rem;
+  }
+}

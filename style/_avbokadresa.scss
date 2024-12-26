@@ -1,0 +1,67 @@
+main.avbokad-resa {
+  .travel-information {
+    width: 60rem;
+    .travel-status-info-cards {
+      width: 22rem;
+      margin: auto;
+      margin-bottom: 5rem;
+      .info-card {
+        margin-bottom: 1.5rem;
+      }
+    }
+    .destination-info-cards {
+      margin-bottom: 3rem;
+      .info-card {
+        margin-bottom: 1rem;
+      }
+    }
+    .info-card {
+      @include flex(center, normal, row);
+      margin-bottom: 3rem;
+      color: $primary-color;
+      p {
+        text-align: start;
+      }
+      img {
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-right: 1rem;
+      }
+      img.message {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  section {
+    h2 {
+      text-align: center;
+    }
+    p {
+      margin: 0 1rem;
+      a {
+        color: $link-color;
+        &:hover {
+          color: $link-color-hover;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main.avbokad-resa {
+    .travel-information {
+      @include flex(center, normal, column);
+      width: 80%;
+      margin: auto;
+      .info-card {
+        width: 30rem;
+        margin-bottom: 2rem;
+        p {
+          text-align: start;
+        }
+      }
+    }
+  }
+}

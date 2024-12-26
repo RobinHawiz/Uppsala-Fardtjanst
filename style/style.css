@@ -1150,4 +1150,136 @@ main.bekräftad-resa section p a:hover {
   main.bekräftad-resa .travel-information p.notice {
     font-size: 1.6rem;
   }
+}
+main.genomförd-resa .travel-information {
+  width: 60rem;
+}
+main.genomförd-resa .travel-information .travel-status-info-cards {
+  width: 22rem;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+main.genomförd-resa .travel-information .travel-status-info-cards .info-card {
+  margin-bottom: 1.5rem;
+}
+main.genomförd-resa .travel-information .destination-info-cards {
+  margin-bottom: 3rem;
+}
+main.genomförd-resa .travel-information .destination-info-cards .info-card {
+  margin-bottom: 1rem;
+}
+main.genomförd-resa .travel-information .info-card {
+  display: flex;
+  align-items: center;
+  justify-content: normal;
+  flex-direction: row;
+  margin-bottom: 3rem;
+  color: #202e45;
+}
+main.genomförd-resa .travel-information .info-card p {
+  text-align: start;
+}
+main.genomförd-resa .travel-information .info-card img {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 1rem;
+}
+main.genomförd-resa .travel-information .info-card img.message {
+  align-self: flex-start;
+}
+main.genomförd-resa section h2 {
+  text-align: center;
+}
+main.genomförd-resa section p {
+  margin: 0 1rem;
+}
+main.genomförd-resa section p a {
+  color: #0a364c;
+}
+main.genomförd-resa section p a:hover {
+  color: #115679;
+}
+
+@media screen and (max-width: 768px) {
+  main.genomförd-resa .travel-information {
+    display: flex;
+    align-items: center;
+    justify-content: normal;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+  }
+  main.genomförd-resa .travel-information .info-card {
+    width: 30rem;
+    margin-bottom: 2rem;
+  }
+  main.genomförd-resa .travel-information .info-card p {
+    text-align: start;
+  }
+}
+main.avbokad-resa .travel-information {
+  width: 60rem;
+}
+main.avbokad-resa .travel-information .travel-status-info-cards {
+  width: 22rem;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+main.avbokad-resa .travel-information .travel-status-info-cards .info-card {
+  margin-bottom: 1.5rem;
+}
+main.avbokad-resa .travel-information .destination-info-cards {
+  margin-bottom: 3rem;
+}
+main.avbokad-resa .travel-information .destination-info-cards .info-card {
+  margin-bottom: 1rem;
+}
+main.avbokad-resa .travel-information .info-card {
+  display: flex;
+  align-items: center;
+  justify-content: normal;
+  flex-direction: row;
+  margin-bottom: 3rem;
+  color: #202e45;
+}
+main.avbokad-resa .travel-information .info-card p {
+  text-align: start;
+}
+main.avbokad-resa .travel-information .info-card img {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 1rem;
+}
+main.avbokad-resa .travel-information .info-card img.message {
+  align-self: flex-start;
+}
+main.avbokad-resa section h2 {
+  text-align: center;
+}
+main.avbokad-resa section p {
+  margin: 0 1rem;
+}
+main.avbokad-resa section p a {
+  color: #0a364c;
+}
+main.avbokad-resa section p a:hover {
+  color: #115679;
+}
+
+@media screen and (max-width: 768px) {
+  main.avbokad-resa .travel-information {
+    display: flex;
+    align-items: center;
+    justify-content: normal;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+  }
+  main.avbokad-resa .travel-information .info-card {
+    width: 30rem;
+    margin-bottom: 2rem;
+  }
+  main.avbokad-resa .travel-information .info-card p {
+    text-align: start;
+  }
 }/*# sourceMappingURL=style.css.map */

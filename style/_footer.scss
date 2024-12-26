@@ -45,6 +45,7 @@ footer {
   footer {
     @include flex(center, center, column);
     .contact {
+      margin: 2rem 0;
       p {
         text-align: center;
         font-size: calc($p-font - 0.2rem);

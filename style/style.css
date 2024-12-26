@@ -415,6 +415,9 @@ footer ul.socials li a:hover svg {
     justify-content: center;
     flex-direction: column;
   }
+  footer .contact {
+    margin: 2rem 0;
+  }
   footer .contact p {
     text-align: center;
     font-size: 1.8rem;

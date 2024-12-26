@@ -1,0 +1,96 @@
+main.avgifter-för-färdtjänst {
+  section {
+    margin: 1rem 0;
+    width: 60rem;
+    h2 {
+      margin: 0;
+    }
+    p {
+      margin: 1.4rem 1rem;
+      text-align: start;
+    }
+    /* The wrapper is necessary for margin-right to work when used with table width 100%. Otherwise only margin-left will work. */
+    /* The .table-wrapper margins can be found inside the media query. */
+    .table-wrapper {
+      table {
+        width: 100%;
+        color: $primary-color;
+        font-size: $p-font;
+        border-collapse: collapse;
+        thead {
+          border-bottom: 0.1rem solid $primary-color;
+          tr {
+            td {
+              padding: 1rem 0;
+            }
+            td:first-child {
+              width: 25rem;
+            }
+            td:nth-child(2) {
+              width: 25rem;
+            }
+            td:nth-child(3) {
+              width: 10rem;
+            }
+          }
+        }
+        tbody {
+          tr {
+            border-bottom: 0.1rem solid
+              rgba($color: $primary-color, $alpha: 0.3);
+
+            td {
+              padding: 1rem 0;
+            }
+          }
+        }
+      }
+    }
+    .img-wrapper {
+      width: 67.5rem;
+      height: 59.1rem;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main.avgifter-för-färdtjänst {
+    section {
+      max-width: 40rem;
+      width: 100%;
+      h2 {
+        margin: 0 1rem;
+      }
+      .table-wrapper {
+        margin: 0 1rem;
+        table {
+          font-size: $p-mobile-font;
+          thead {
+            tr {
+              td {
+                padding: 1rem 0;
+              }
+              td:first-child {
+                width: 50%;
+              }
+              td:nth-child(2) {
+                width: 30%;
+              }
+              td:nth-child(3) {
+                width: 20%;
+              }
+            }
+          }
+        }
+      }
+      .img-wrapper {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

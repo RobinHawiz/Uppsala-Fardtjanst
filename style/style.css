@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *:before,
 *:after {
@@ -41,7 +42,7 @@ legend {
 h3 {
   font-size: 2.4rem;
   color: #202e45;
-  font-weight: 400;
+  font-weight: 700;
   margin: 0 1rem;
 }
 
@@ -62,20 +63,21 @@ a {
   text-align: center;
 }
 
-button {
-  font-size: 2rem;
-  color: white;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-}
-
 span {
   font-size: 2rem;
 }
 
+/* Styling for text */
 .bold {
   font-weight: 700;
+}
+
+/* Styling for links (excluding the ones in the footer) */
+.link {
+  color: #0a364c;
+}
+.link:hover {
+  color: #115679;
 }
 
 main {
@@ -100,24 +102,50 @@ span.divider {
   margin: 3rem auto 4.8rem auto;
 }
 
-button.book-trip {
+/* Styling for buttons */
+button {
+  font-size: 2rem;
+  color: white;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+button.book-trip,
+button.login,
+button.change-booking,
+button.cancel-booking {
   padding: 1.5rem 6.8rem;
-  background-color: #627b1e;
   border-radius: 1.5rem;
   text-align: center;
+}
+
+button.book-trip {
+  background-color: #627b1e;
 }
 button.book-trip:hover {
   background-color: #799825;
 }
 
 button.login {
-  padding: 1.5rem 6.8rem;
-  margin: 2rem 0;
-  border-radius: 1.5rem;
   background-color: #4c4698;
 }
 button.login:hover {
   background-color: #7c79ad;
+}
+
+button.change-booking {
+  background-color: #4c4698;
+}
+button.change-booking:hover {
+  background-color: #7c79ad;
+}
+
+button.cancel-booking {
+  background-color: #f00400;
+}
+button.cancel-booking:hover {
+  background-color: #ff4a47;
 }
 
 @media screen and (max-width: 1024px) {
@@ -436,12 +464,6 @@ form section textarea {
 form section.price-information p {
   line-height: 2.5rem;
   margin-bottom: 1rem;
-}
-form section.price-information a {
-  color: #0a364c;
-}
-form section.price-information a:hover {
-  color: #115679;
 }
 form .input-container {
   display: flex;
@@ -811,6 +833,9 @@ form.login-form .input-box input::placeholder {
 .accordion-container .accordion-panel.hidden {
   display: none;
 }
+.accordion-container h3 {
+  font-weight: 400;
+}
 
 @media screen and (max-width: 768px) {
   .accordion-container {
@@ -830,7 +855,7 @@ form.login-form .input-box input::placeholder {
     height: 2.4rem;
     margin-top: 0.5rem;
   }
-  h3 {
+  .accordion-container h3 {
     text-align: center;
   }
 }
@@ -868,6 +893,10 @@ main.min-profil section p a:hover {
 
 @media screen and (max-width: 768px) {
   main.min-profil .profile-information {
+    display: flex;
+    align-items: center;
+    justify-content: normal;
+    flex-direction: column;
     width: 80%;
     margin: auto;
   }
@@ -876,6 +905,7 @@ main.min-profil section p a:hover {
     align-items: center;
     justify-content: normal;
     flex-direction: row;
+    width: 30rem;
     margin-bottom: 2rem;
   }
   main.min-profil .profile-information .info-card p {
@@ -885,5 +915,239 @@ main.min-profil section p a:hover {
     width: 4.5rem;
     height: 4.5rem;
     margin-right: 1rem;
+  }
+}
+main.kontakt section {
+  margin: 1rem 0;
+  max-width: 60rem;
+}
+main.kontakt section h2 {
+  margin: 0;
+  line-height: 3rem;
+}
+main.kontakt section p {
+  margin: 1.4rem 0;
+  text-align: start;
+}
+
+@media screen and (max-width: 768px) {
+  main.kontakt section {
+    width: 100%;
+  }
+  main.kontakt section h2 {
+    margin: 0 1rem;
+  }
+  main.kontakt section p {
+    margin: 1.4rem 1rem;
+  }
+}
+main.om-färdtjänst .information,
+main.om-färdtjänst section {
+  margin: 1rem 0;
+  max-width: 60rem;
+}
+main.om-färdtjänst .information h3,
+main.om-färdtjänst section h3 {
+  margin: 0;
+  margin-top: 2rem;
+  line-height: 2.7rem;
+}
+main.om-färdtjänst .information h2,
+main.om-färdtjänst section h2 {
+  margin: 0;
+}
+main.om-färdtjänst .information p,
+main.om-färdtjänst section p {
+  margin: 1.4rem 0;
+  text-align: start;
+}
+main.om-färdtjänst .information ul,
+main.om-färdtjänst section ul {
+  margin-left: 4rem;
+  font-weight: 400;
+  line-height: 3rem;
+}
+main.om-färdtjänst .information p:first-child {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+  main.om-färdtjänst section {
+    width: 100%;
+  }
+  main.om-färdtjänst section h2 {
+    margin: 0 1rem;
+  }
+  main.om-färdtjänst section h3 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  main.om-färdtjänst section p {
+    margin: 1.4rem 1rem;
+  }
+}
+main.avgifter-för-färdtjänst section {
+  margin: 1rem 0;
+  width: 60rem;
+  /* The wrapper is necessary for margin-right to work when used with table width 100%. Otherwise only margin-left will work. */
+  /* The .table-wrapper margins can be found inside the media query. */
+}
+main.avgifter-för-färdtjänst section h2 {
+  margin: 0;
+}
+main.avgifter-för-färdtjänst section p {
+  margin: 1.4rem 1rem;
+  text-align: start;
+}
+main.avgifter-för-färdtjänst section .table-wrapper table {
+  width: 100%;
+  color: #202e45;
+  font-size: 2rem;
+  border-collapse: collapse;
+}
+main.avgifter-för-färdtjänst section .table-wrapper table thead {
+  border-bottom: 0.1rem solid #202e45;
+}
+main.avgifter-för-färdtjänst section .table-wrapper table thead tr td {
+  padding: 1rem 0;
+}
+main.avgifter-för-färdtjänst section .table-wrapper table thead tr td:first-child {
+  width: 25rem;
+}
+main.avgifter-för-färdtjänst section .table-wrapper table thead tr td:nth-child(2) {
+  width: 25rem;
+}
+main.avgifter-för-färdtjänst section .table-wrapper table thead tr td:nth-child(3) {
+  width: 10rem;
+}
+main.avgifter-för-färdtjänst section .table-wrapper table tbody tr {
+  border-bottom: 0.1rem solid rgba(32, 46, 69, 0.3);
+}
+main.avgifter-för-färdtjänst section .table-wrapper table tbody tr td {
+  padding: 1rem 0;
+}
+main.avgifter-för-färdtjänst section .img-wrapper {
+  width: 67.5rem;
+  height: 59.1rem;
+}
+main.avgifter-för-färdtjänst section .img-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  main.avgifter-för-färdtjänst section {
+    max-width: 40rem;
+    width: 100%;
+  }
+  main.avgifter-för-färdtjänst section h2 {
+    margin: 0 1rem;
+  }
+  main.avgifter-för-färdtjänst section .table-wrapper {
+    margin: 0 1rem;
+  }
+  main.avgifter-för-färdtjänst section .table-wrapper table {
+    font-size: 1.8rem;
+  }
+  main.avgifter-för-färdtjänst section .table-wrapper table thead tr td {
+    padding: 1rem 0;
+  }
+  main.avgifter-för-färdtjänst section .table-wrapper table thead tr td:first-child {
+    width: 50%;
+  }
+  main.avgifter-för-färdtjänst section .table-wrapper table thead tr td:nth-child(2) {
+    width: 30%;
+  }
+  main.avgifter-för-färdtjänst section .table-wrapper table thead tr td:nth-child(3) {
+    width: 20%;
+  }
+  main.avgifter-för-färdtjänst section .img-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+}
+main.bekräftad-resa .travel-information {
+  width: 60rem;
+}
+main.bekräftad-resa .travel-information .travel-status-info-cards {
+  width: 20rem;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+main.bekräftad-resa .travel-information .travel-status-info-cards .info-card {
+  margin-bottom: 1.5rem;
+}
+main.bekräftad-resa .travel-information .destination-info-cards {
+  margin-bottom: 3rem;
+}
+main.bekräftad-resa .travel-information .destination-info-cards .info-card {
+  margin-bottom: 1rem;
+}
+main.bekräftad-resa .travel-information .info-card {
+  display: flex;
+  align-items: center;
+  justify-content: normal;
+  flex-direction: row;
+  margin-bottom: 3rem;
+  color: #202e45;
+}
+main.bekräftad-resa .travel-information .info-card p {
+  text-align: start;
+}
+main.bekräftad-resa .travel-information .info-card img {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 1rem;
+}
+main.bekräftad-resa .travel-information .info-card img.message {
+  align-self: flex-start;
+}
+main.bekräftad-resa .travel-information .button-container {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: normal;
+  flex-direction: column;
+}
+main.bekräftad-resa .travel-information .button-container button:first-child {
+  margin-bottom: 3rem;
+}
+main.bekräftad-resa .travel-information p.notice {
+  font-size: 1.8rem;
+  max-width: 40rem;
+  margin: auto;
+}
+main.bekräftad-resa section h2 {
+  text-align: center;
+}
+main.bekräftad-resa section p {
+  margin: 0 1rem;
+}
+main.bekräftad-resa section p a {
+  color: #0a364c;
+}
+main.bekräftad-resa section p a:hover {
+  color: #115679;
+}
+
+@media screen and (max-width: 768px) {
+  main.bekräftad-resa .travel-information {
+    display: flex;
+    align-items: center;
+    justify-content: normal;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+  }
+  main.bekräftad-resa .travel-information .info-card {
+    width: 30rem;
+    margin-bottom: 2rem;
+  }
+  main.bekräftad-resa .travel-information .info-card p {
+    text-align: start;
+  }
+  main.bekräftad-resa .travel-information p.notice {
+    font-size: 1.6rem;
   }
 }/*# sourceMappingURL=style.css.map */

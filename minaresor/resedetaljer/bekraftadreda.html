@@ -17,17 +17,17 @@
         type="text/css"
       />
     </noscript>
-    <link rel="stylesheet" href="../style/style.css" />
-    <link rel="icon" type="image/x-icon" href="../icon/favicon.ico" />
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="icon" type="image/x-icon" href="../../icon/favicon.ico" />
     <title>Uppsala färdtjänst</title>
   </head>
   <body>
     <header>
-      <a class="logo logo-desktop" href="../minaresor/minaresor.html">
-        <img src="../img/logo_desktop.svg" alt="Uppsala kommuns logga" />
+      <a class="logo logo-desktop" href="../../minaresor/minaresor.html">
+        <img src="../../img/logo_desktop.svg" alt="Uppsala kommuns logga" />
       </a>
-      <a class="logo logo-mobile" href="../minaresor/minaresor.html">
-        <img src="../img/logo_mobile.svg" alt="Uppsala kommuns logga" />
+      <a class="logo logo-mobile" href="../../minaresor/minaresor.html">
+        <img src="../../img/logo_mobile.svg" alt="Uppsala kommuns logga" />
       </a>
       <button class="burgerking">
         <span class="menu">Meny</span>
@@ -40,87 +40,142 @@
       <nav>
         <ul class="nav-links">
           <li>
-            <a href="../minaresor/minaresor.html">Mina resor</a>
+            <a class="active" href="../../minaresor/minaresor.html"
+              >Mina resor</a
+            >
             <span class="nav-divider"></span>
           </li>
 
           <li>
-            <a href="../bokafardtjanst/bokafardtjanst.html">Boka färdtjänst</a>
+            <a href="../../bokafardtjanst/bokafardtjanst.html"
+              >Boka färdtjänst</a
+            >
             <span class="nav-divider"></span>
           </li>
 
           <li>
-            <a href="../aterkommanderesor/aterkommanderesor.html"
+            <a href="../../aterkommanderesor/aterkommanderesor.html"
               >Återkommande resor</a
             >
             <span class="nav-divider"></span>
           </li>
 
           <li>
-            <a href="../minprofil/minprofil.html">Min profil</a>
+            <a href="../../minprofil/minprofil.html">Min profil</a>
             <span class="nav-divider"></span>
           </li>
 
           <li>
-            <a href="../kontakt/kontakt.html">Kontakt</a>
+            <a href="../../kontakt/kontakt.html">Kontakt</a>
             <span class="nav-divider"></span>
           </li>
 
           <li>
-            <a class="active" href="../omfardtjanst/omfardtjanst.html"
-              >Om färdtjänst</a
-            >
+            <a href="../../omfardtjanst/omfardtjanst.html">Om färdtjänst</a>
             <span class="nav-divider"></span>
           </li>
 
           <li>
-            <a href="../avgifterforfardtjanst/avgifterforfardtjanst.html"
+            <a href="../../avgifterforfardtjanst/avgifterforfardtjanst.html"
               >Avgifter för färdtjänst</a
             >
           </li>
         </ul>
       </nav>
     </header>
-    <main class="om-färdtjänst">
-      <h1>Om färdtjänst</h1>
+    <main class="bekräftad-resa">
+      <h1>Resedetaljer</h1>
       <span class="divider"></span>
-      <div class="information">
-        <p>
-          Du kan få färdtjänst om du har en funktionsnedsättning som gör att du
-          har stora svårigheter att förflytta dig på egen hand eller att resa
-          med kollektivtrafik. Din funktionsnedsättning ska finnas i mer än tre
-          månader.
-        </p>
-        <p>
-          Du kan få färdtjänst med en personbil eller med ett specialfordon,
-          beroende på vad du behöver. I ett specialfordon går det till exempel
-          att sitta kvar i sin rullstol under resan.
+      <div class="travel-information">
+        <div class="travel-status-info-cards">
+          <div class="info-card">
+            <img
+              src="../../icon/iconmonstr-check-mark.svg"
+              alt="Ikon av din profil"
+            />
+            <div class="info">
+              <p class="bold">Resan är bekräftad</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <img
+              src="../../icon/iconmonstr-time.svg"
+              alt="Ikon av din profil"
+            />
+            <div class="info">
+              <p class="bold">Mån 3 mars 13:45</p>
+            </div>
+          </div>
+        </div>
+        <div class="destination-info-cards">
+          <div class="info-card">
+            <img
+              src="../../icon/iconmonstr-door-from.svg"
+              alt="Ikon av din profil"
+            />
+            <div class="info">
+              <p><span class="bold">Från</span>: Karlsrogatan 81, Uppsala</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <img
+              src="../../icon/iconmonstr-door-to.svg"
+              alt="Ikon av din profil"
+            />
+            <div class="info">
+              <p>
+                <span class="bold">Till</span>: Ingång 85 Akademiska sjukhuset,
+                Uppsala
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="info-card">
+          <img
+            src="../../icon/iconmonstr-credit-card.svg"
+            alt="Ikon av din profil"
+          />
+          <div class="info">
+            <p><span class="bold">Egenavgift</span>: 0 Sek, Färdtjänst</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <img src="../../icon/iconmonstr-phone.svg" alt="Ikon av din profil" />
+          <div class="info">
+            <p><span class="bold">Ditt tel</span>: 070-987 65 43</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <img
+            src="../../icon/iconmonstr-accessibility-circle-filled.svg"
+            alt="Ikon av din profil"
+          />
+          <div class="info">
+            <p><span class="bold">Behov</span>: Rullstol, Ledsagare</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <img
+            class="message"
+            src="../../icon/iconmonstr-email.svg"
+            alt="Ikon av din profil"
+          />
+          <div class="info">
+            <p>
+              <span class="bold">Meddelande</span>: Behöver ledsagare till/från
+              dörren, hjälp med baggage, etc...
+            </p>
+          </div>
+        </div>
+        <div class="button-container">
+          <button class="change-booking">Ändra</button>
+          <button class="cancel-booking">Avboka</button>
+        </div>
+        <p class="notice">
+          Du kan avbeställa fram till
+          <span class="bold">cirka 20 min innan</span> upphämtning
         </p>
       </div>
-      <section>
-        <h2>Frågor och svar om färdtjänst</h2>
-        <h3>Under vilka tider får jag boka färdtjänst?</h3>
-        <p>
-          Du kan använda färdtjänsten dygnet runt. Boka din resa i så god tid
-          som möjligt, dock senast 30 minuter innan du vill resa.
-        </p>
-        <h3>Hur långt kan jag resa med färdtjänst?</h3>
-        <p>Med ditt färdtjänsttillstånd får du resa hur mycket du vill:</p>
-        <ul>
-          <li>inom Uppsala kommun</li>
-          <li>till och från Knivsta kommun</li>
-          <li>till och från Arlanda flygplats</li>
-        </ul>
-        <p>
-          <span class="bold">Vill du veta mer?</span>
-          <br />
-          <a
-            class="link"
-            href="https://www.uppsala.se/stod-och-omsorg/fardtjanst/fardtjanst/"
-            >Om Färdtjänst inom Uppsala kommun</a
-          >
-        </p>
-      </section>
     </main>
     <footer>
       <div class="contact">
@@ -169,6 +224,6 @@
         </li>
       </ul>
     </footer>
-    <script src="../js/navbar.js"></script>
+    <script src="../../js/navbar.js"></script>
   </body>
 </html>

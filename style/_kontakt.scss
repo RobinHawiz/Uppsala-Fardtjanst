@@ -1,0 +1,28 @@
+main.kontakt {
+  section {
+    margin: 1rem 0;
+    max-width: 60rem;
+    h2 {
+      margin: 0;
+      line-height: 3rem;
+    }
+    p {
+      margin: 1.4rem 0;
+      text-align: start;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main.kontakt {
+    section {
+      width: 100%;
+      h2 {
+        margin: 0 1rem;
+      }
+      p {
+        margin: 1.4rem 1rem;
+      }
+    }
+  }
+}

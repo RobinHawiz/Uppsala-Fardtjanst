@@ -4,11 +4,13 @@ $h1-font: 4.8rem;
 $h2-font: 2.8rem;
 $h3-font: 2.4rem;
 $p-font: 2rem;
+$p-small-font: 1.8rem;
 
 $h1-mobile-font: calc($h1-font - 1.4rem);
 $h2-mobile-font: calc($h2-font - 0.4rem);
 $h3-mobile-font: calc($h3-font - 0.2rem);
-$p-mobile-font: calc(2rem - 0.2rem);
+$p-mobile-font: calc($p-font - 0.2rem);
+$p-small-mobile-font: calc($p-small-font - 0.2rem);
 
 $primary-color: #202e45;
 $secondary-color: #f4f3ff;
@@ -20,6 +22,9 @@ $button-font-color: white;
 
 $book-button-background-color: #627b1e;
 $book-button-background-color-hover: #799825;
+
+$cancel-button-background-color: #f00400;
+$cancel-button-background-color-hover: #ff4a47;
 
 $nav-font-color: #a8c7fa;
 $nav-font-color-hover: white;
@@ -92,7 +97,7 @@ legend {
 h3 {
   font-size: $h3-font;
   color: $primary-color;
-  font-weight: 400;
+  font-weight: 700;
   margin: 0 1rem;
 }
 
@@ -113,20 +118,23 @@ a {
   text-align: center;
 }
 
-button {
-  font-size: $p-font;
-  color: $button-font-color;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-}
-
 span {
   font-size: $p-font;
 }
 
+/* Styling for text */
+
 .bold {
   font-weight: 700;
+}
+
+/* Styling for links (excluding the ones in the footer) */
+
+.link {
+  color: $link-color;
+  &:hover {
+    color: $link-color-hover;
+  }
 }
 
 main {
@@ -148,24 +156,50 @@ span.divider {
   margin: 3rem auto 4.8rem auto;
 }
 
-button.book-trip {
+/* Styling for buttons */
+
+button {
+  font-size: $p-font;
+  color: $button-font-color;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+button.book-trip,
+button.login,
+button.change-booking,
+button.cancel-booking {
   padding: 1.5rem 6.8rem;
-  background-color: $book-button-background-color;
   border-radius: 1.5rem;
   text-align: center;
+}
 
+button.book-trip {
+  background-color: $book-button-background-color;
   &:hover {
     background-color: $book-button-background-color-hover;
   }
 }
 
 button.login {
-  padding: 1.5rem 6.8rem;
-  margin: 2rem 0;
-  border-radius: 1.5rem;
   background-color: $button-background-color;
   &:hover {
     background-color: $button-background-color-hover;
+  }
+}
+
+button.change-booking {
+  background-color: $button-background-color;
+  &:hover {
+    background-color: $button-background-color-hover;
+  }
+}
+
+button.cancel-booking {
+  background-color: $cancel-button-background-color;
+  &:hover {
+    background-color: $cancel-button-background-color-hover;
   }
 }
 

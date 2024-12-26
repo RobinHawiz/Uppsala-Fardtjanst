@@ -35,10 +35,12 @@ main.min-profil {
 @media screen and (max-width: 768px) {
   main.min-profil {
     .profile-information {
+      @include flex(center, normal, column);
       width: 80%;
       margin: auto;
       .info-card {
         @include flex(center, normal, row);
+        width: 30rem;
         margin-bottom: 2rem;
         p {
           text-align: start;

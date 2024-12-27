@@ -1000,6 +1000,12 @@ main.om-färdtjänst .information p:first-child {
   main.om-färdtjänst section p {
     margin: 1.4rem 1rem;
   }
+  main.om-färdtjänst .information {
+    width: 100%;
+  }
+  main.om-färdtjänst .information p {
+    margin: 1.4rem 1rem;
+  }
 }
 main.avgifter-för-färdtjänst section {
   margin: 1rem 0;

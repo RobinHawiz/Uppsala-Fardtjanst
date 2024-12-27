@@ -61,6 +61,7 @@ p {
 
 a {
   text-align: center;
+  font-size: 2rem;
 }
 
 span {
@@ -161,6 +162,8 @@ a.button {
   }
   h1 {
     font-size: 3.4rem;
+    -webkit-hyphens: manual;
+            hyphens: manual;
   }
   h1.homepage-title {
     width: 90%;
@@ -1315,4 +1318,37 @@ main.ändra-resa .button-container {
   flex-direction: row;
   flex-wrap: wrap-reverse;
   gap: 3rem;
+}
+
+main.tillgänglighetsredogörelse section {
+  margin: 1rem 0;
+  max-width: 60rem;
+}
+main.tillgänglighetsredogörelse section h2 {
+  margin: 0;
+  line-height: 3rem;
+}
+main.tillgänglighetsredogörelse section h3 {
+  font-weight: 700;
+  margin: 0;
+}
+main.tillgänglighetsredogörelse section p {
+  margin: 1.4rem 0;
+  text-align: start;
+}
+
+@media screen and (max-width: 768px) {
+  main.tillgänglighetsredogörelse section {
+    width: 100%;
+  }
+  main.tillgänglighetsredogörelse section h2 {
+    margin: 0 1rem;
+  }
+  main.tillgänglighetsredogörelse section h3 {
+    margin: 0 1rem;
+  }
+  main.tillgänglighetsredogörelse section p,
+  main.tillgänglighetsredogörelse section a.standalone-link {
+    margin: 1.4rem 1rem;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,36 @@
+main.tillgänglighetsredogörelse {
+  section {
+    margin: 1rem 0;
+    max-width: 60rem;
+    h2 {
+      margin: 0;
+      line-height: 3rem;
+    }
+    h3 {
+      font-weight: 700;
+      margin: 0;
+    }
+    p {
+      margin: 1.4rem 0;
+      text-align: start;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main.tillgänglighetsredogörelse {
+    section {
+      width: 100%;
+      h2 {
+        margin: 0 1rem;
+      }
+      h3 {
+        margin: 0 1rem;
+      }
+      p,
+      a.standalone-link {
+        margin: 1.4rem 1rem;
+      }
+    }
+  }
+}

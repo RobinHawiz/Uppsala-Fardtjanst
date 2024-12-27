@@ -12,6 +12,9 @@ footer {
       color: $secondary-color;
       a {
         color: $secondary-color;
+        &:hover {
+          color: $secondary-color-hover;
+        }
       }
     }
   }

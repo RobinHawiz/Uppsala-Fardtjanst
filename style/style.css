@@ -380,6 +380,9 @@ footer .contact p {
 footer .contact p a {
   color: #f4f3ff;
 }
+footer .contact p a:hover {
+  color: #d6d1ff;
+}
 footer ul.socials {
   display: flex;
   align-items: center;

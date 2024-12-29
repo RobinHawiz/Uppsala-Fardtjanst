@@ -17,17 +17,21 @@ form.booking-form {
     }
   }
 
-  fieldset.how-often-to-travel {
+  fieldset.how-often-to-travel,
+  fieldset.return-trip {
     .input-container {
       @include flex(center, normal, column);
       /* Changes to display flex when the user clicks on a radio button (from displayInput.js). */
       display: none;
+      h3 {
+        text-align: center;
+      }
       .input-box {
         label {
           font-weight: 700;
         }
         input {
-          width: 40rem;
+          width: 20rem;
           height: 4.5rem;
         }
       }
@@ -39,7 +43,7 @@ form.booking-form {
         }
       }
 
-      .calendar {
+      .calendar-container {
         @include flex(center, flex-start, row);
         width: 39rem;
         flex-wrap: wrap;
@@ -78,6 +82,23 @@ form.booking-form {
         }
       }
     }
+    .input-container.weekly,
+    .input-container.monthly {
+      .input-boxes-container {
+        width: 60rem;
+        @include flex(center, center, row);
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+      .input-box.day,
+      .input-box.calendar.day {
+        display: none;
+      }
+      .input-box.day.show,
+      .input-box.calendar.day.show {
+        display: flex;
+      }
+    }
   }
 
   .radio-and-input {
@@ -114,23 +135,29 @@ form.booking-form {
       }
     }
 
-    fieldset.how-often-to-travel {
+    fieldset.how-often-to-travel,
+    fieldset.return-trip {
       .radio-and-input {
-        .input-container {
-          .input-box {
-            input {
-              max-width: none;
-            }
-          }
-        }
         .input-container.monthly {
-          .calendar {
+          .calendar-container {
             width: 37rem;
             label {
               width: 2.8rem;
               height: 2.8rem;
               font-size: $p-mobile-font;
             }
+          }
+        }
+        .input-container.weekly,
+        .input-container.monthly {
+          .input-boxes-container {
+            width: 100%;
+          }
+          .input-box.day {
+            display: none;
+          }
+          .input-box.day.show {
+            display: flex;
           }
         }
       }

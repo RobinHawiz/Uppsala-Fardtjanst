@@ -58,7 +58,7 @@
 
           <li>
             <a class="active" href="../aterkommanderesor/aterkommanderesor.html"
-              >Återkommande resor</a
+              >Boka återkommande resor</a
             >
             <span class="nav-divider"></span>
           </li>
@@ -94,7 +94,7 @@
       </nav>
     </header>
     <main>
-      <h1>Återkommande resor</h1>
+      <h1>Boka återkommande resor</h1>
       <span class="divider"></span>
       <form class="booking-form" autocomplete="on" action="">
         <fieldset class="where-to-travel">
@@ -102,61 +102,16 @@
           <div class="input-container">
             <div class="input-box">
               <label for="from">Från</label>
-              <input id="from" type="text" />
+              <input
+                class="autocomplete"
+                id="from"
+                type="text"
+                placeholder=""
+              />
             </div>
             <div class="input-box">
               <label for="to">Till</label>
-              <input id="to" type="text" />
-            </div>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>När vill du åka?</legend>
-          <div class="radio-and-input">
-            <div class="radio-buttons">
-              <label>
-                <input type="radio" name="departure-or-arrival" />
-                <span>Avgångstid</span>
-              </label>
-              <label>
-                <input type="radio" name="departure-or-arrival" />
-                <span>Ankomsttid</span>
-              </label>
-            </div>
-            <div class="input-container">
-              <div class="input-box">
-                <label for="day">Dag</label>
-                <input id="day" type="text" placeholder="yyyy-mm-dd" />
-              </div>
-              <div class="input-box">
-                <label for="time">Tid</label>
-                <input id="time" type="text" placeholder="hh:mm" />
-              </div>
-            </div>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>Vill du boka en returresa?</legend>
-          <div class="radio-and-input">
-            <div class="radio-buttons">
-              <label>
-                <input type="radio" name="yes-or-no" />
-                <span>Ja</span>
-              </label>
-              <label>
-                <input id="no" type="radio" name="yes-or-no" />
-                <span>Nej</span>
-              </label>
-            </div>
-            <div class="input-container">
-              <div class="input-box">
-                <label for="day">Avgång dag</label>
-                <input id="day" type="text" placeholder="yyyy-mm-dd" />
-              </div>
-              <div class="input-box">
-                <label for="time">Avgång tid</label>
-                <input id="time" type="text" placeholder="hh:mm" />
-              </div>
+              <input class="autocomplete" id="to" type="text" placeholder="" />
             </div>
           </div>
         </fieldset>
@@ -213,6 +168,36 @@
                   </label>
                 </div>
               </div>
+              <div class="input-boxes-container">
+                <div class="input-box day monday">
+                  <label for="time-monday">Måndag avgångstid</label>
+                  <input id="time-monday" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box day tuesday">
+                  <label for="time-tuesday">Tisdag avgångstid</label>
+                  <input id="time-tuesday" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box day wednesday">
+                  <label for="time-wednesday">Onsdag avgångstid</label>
+                  <input id="time-wednesday" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box day thursday">
+                  <label for="time-thursday">Torsdag avgångstid</label>
+                  <input id="time-thursday" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box day friday">
+                  <label for="time-friday">Fredag avgångstid</label>
+                  <input id="time-firday" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box day saturday">
+                  <label for="time-saturday">Lördag avgångstid</label>
+                  <input id="time-saturday" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box day sunday">
+                  <label for="time-sunday">Söndag avgångstid</label>
+                  <input id="time-sunday" type="text" placeholder="hh:mm" />
+                </div>
+              </div>
             </div>
             <div class="input-container monthly">
               <div class="input-box">
@@ -220,7 +205,7 @@
                 <input id="monthly" type="number" min="5" max="52" required />
               </div>
               <h3 class="bold">Välj vilka dagar i månaden som du vill resa</h3>
-              <div class="calendar">
+              <div class="calendar-container">
                 <input id="day-1" type="checkbox" value="1" />
                 <label for="day-1">1</label>
                 <input id="day-2" type="checkbox" value="2" />
@@ -288,20 +273,472 @@
                   >Sista dagen i månaden</label
                 >
               </div>
+              <div class="input-boxes-container">
+                <div class="input-box calendar day 1">
+                  <label for="time-1">1:a avgångstid</label>
+                  <input id="time-1" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 2">
+                  <label for="time-2">2:a avgångstid</label>
+                  <input id="time-2" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 3">
+                  <label for="time-3">3:e avgångstid</label>
+                  <input id="time-3" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 4">
+                  <label for="time-4">4:e avgångstid</label>
+                  <input id="time-4" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 5">
+                  <label for="time-5">5:e avgångstid</label>
+                  <input id="time-5" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 6">
+                  <label for="time-6">6:e avgångstid</label>
+                  <input id="time-6" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 7">
+                  <label for="time-7">7:e avgångstid</label>
+                  <input id="time-7" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 8">
+                  <label for="time-8">8:e avgångstid</label>
+                  <input id="time-8" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 9">
+                  <label for="time-9">9:e avgångstid</label>
+                  <input id="time-9" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 10">
+                  <label for="time-10">10:e avgångstid</label>
+                  <input id="time-10" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 11">
+                  <label for="time-11">11:e avgångstid</label>
+                  <input id="time-11" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 12">
+                  <label for="time-12">12:e avgångstid</label>
+                  <input id="time-12" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 13">
+                  <label for="time-13">13:e avgångstid</label>
+                  <input id="time-13" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 14">
+                  <label for="time-14">14:e avgångstid</label>
+                  <input id="time-14" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 15">
+                  <label for="time-15">15:e avgångstid</label>
+                  <input id="time-15" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 16">
+                  <label for="time-16">16:e avgångstid</label>
+                  <input id="time-16" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 17">
+                  <label for="time-17">17:e avgångstid</label>
+                  <input id="time-17" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 18">
+                  <label for="time-18">18:e avgångstid</label>
+                  <input id="time-18" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 19">
+                  <label for="time-19">19:e avgångstid</label>
+                  <input id="time-19" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 20">
+                  <label for="time-20">20:e avgångstid</label>
+                  <input id="time-20" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 21">
+                  <label for="time-21">21:a avgångstid</label>
+                  <input id="time-21" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 22">
+                  <label for="time-22">22:a avgångstid</label>
+                  <input id="time-22" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 23">
+                  <label for="time-23">23:e avgångstid</label>
+                  <input id="time-23" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 24">
+                  <label for="time-24">24:e avgångstid</label>
+                  <input id="time-24" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 25">
+                  <label for="time-25">25:e avgångstid</label>
+                  <input id="time-25" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 26">
+                  <label for="time-26">26:e avgångstid</label>
+                  <input id="time-26" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 27">
+                  <label for="time-27">27:e avgångstid</label>
+                  <input id="time-27" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 28">
+                  <label for="time-28">28:e avgångstid</label>
+                  <input id="time-28" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 29">
+                  <label for="time-29">29:e avgångstid</label>
+                  <input id="time-29" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 30">
+                  <label for="time-30">30:e avgångstid</label>
+                  <input id="time-30" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day 31">
+                  <label for="time-31">31:a avgångstid</label>
+                  <input id="time-31" type="text" placeholder="hh:mm" />
+                </div>
+                <div class="input-box calendar day last-day-of-the-month">
+                  <label for="time-last-day-of-the-month"
+                    >Sista dagen avgångstid</label
+                  >
+                  <input
+                    id="time-last-day-of-the-month"
+                    type="text"
+                    placeholder="hh:mm"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="return-trip">
+          <legend>Vill du boka returresor?</legend>
+          <div class="radio-and-input">
+            <div class="radio-buttons">
+              <label>
+                <input id="yes" type="radio" name="yes-or-no" />
+                <span>Ja</span>
+              </label>
+              <label>
+                <input id="no" type="radio" name="yes-or-no" />
+                <span>Nej</span>
+              </label>
+            </div>
+            <div class="input-container">
+              <div class="input-container weekly return-trip">
+                <h3 class="bold">
+                  Välj vilka dagar i veckan som du vill boka dina returresor
+                </h3>
+                <div class="radio-buttons">
+                  <div class="row">
+                    <label>
+                      <input type="checkbox" name="monday" />
+                      <span>Mån</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="tuesday" />
+                      <span>Tis</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="wednesday" />
+                      <span>Ons</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="thursday" />
+                      <span>Tors</span>
+                    </label>
+                  </div>
+                  <div class="row">
+                    <label>
+                      <input type="checkbox" name="friday" />
+                      <span>Fre</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="saturday" />
+                      <span>Lör</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="sunday" />
+                      <span>Sön</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="input-boxes-container">
+                  <div class="input-box day return-trip monday">
+                    <label for="time-monday">Måndag avgångstid</label>
+                    <input id="time-monday" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box day return-trip tuesday">
+                    <label for="time-tuesday">Tisdag avgångstid</label>
+                    <input id="time-tuesday" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box day return-trip wednesday">
+                    <label for="time-wednesday">Onsdag avgångstid</label>
+                    <input
+                      id="time-wednesday"
+                      type="text"
+                      placeholder="hh:mm"
+                    />
+                  </div>
+                  <div class="input-box day return-trip thursday">
+                    <label for="time-thursday">Torsdag avgångstid</label>
+                    <input id="time-thursday" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box day return-trip friday">
+                    <label for="time-friday">Fredag avgångstid</label>
+                    <input id="time-firday" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box day return-trip saturday">
+                    <label for="time-saturday">Lördag avgångstid</label>
+                    <input id="time-saturday" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box day return-trip sunday">
+                    <label for="time-sunday">Söndag avgångstid</label>
+                    <input id="time-sunday" type="text" placeholder="hh:mm" />
+                  </div>
+                </div>
+              </div>
+              <div class="input-container monthly return-trip">
+                <h3 class="bold">
+                  Välj vilka dagar i månaden som du vill boka dina returresor
+                </h3>
+                <div class="calendar-container">
+                  <input id="day-1-return-trip" type="checkbox" value="1" />
+                  <label for="day-1-return-trip">1</label>
+                  <input id="day-2-return-trip" type="checkbox" value="2" />
+                  <label for="day-2-return-trip">2</label>
+                  <input id="day-3-return-trip" type="checkbox" value="3" />
+                  <label for="day-3-return-trip">3</label>
+                  <input id="day-4-return-trip" type="checkbox" value="4" />
+                  <label for="day-4-return-trip">4</label>
+                  <input id="day-5-return-trip" type="checkbox" value="5" />
+                  <label for="day-5-return-trip">5</label>
+                  <input id="day-6-return-trip" type="checkbox" value="6" />
+                  <label for="day-6-return-trip">6</label>
+                  <input id="day-7-return-trip" type="checkbox" value="7" />
+                  <label for="day-7-return-trip">7</label>
+                  <input id="day-8-return-trip" type="checkbox" value="8" />
+                  <label for="day-8-return-trip">8</label>
+                  <input id="day-9-return-trip" type="checkbox" value="9" />
+                  <label for="day-9-return-trip">9</label>
+                  <input id="day-10-return-trip" type="checkbox" value="10" />
+                  <label for="day-10-return-trip">10</label>
+                  <input id="day-11-return-trip" type="checkbox" value="11" />
+                  <label for="day-11-return-trip">11</label>
+                  <input id="day-12-return-trip" type="checkbox" value="12" />
+                  <label for="day-12-return-trip">12</label>
+                  <input id="day-13-return-trip" type="checkbox" value="13" />
+                  <label for="day-13-return-trip">13</label>
+                  <input id="day-14-return-trip" type="checkbox" value="14" />
+                  <label for="day-14-return-trip">14</label>
+                  <input id="day-15-return-trip" type="checkbox" value="15" />
+                  <label for="day-15-return-trip">15</label>
+                  <input id="day-16-return-trip" type="checkbox" value="16" />
+                  <label for="day-16-return-trip">16</label>
+                  <input id="day-17-return-trip" type="checkbox" value="17" />
+                  <label for="day-17-return-trip">17</label>
+                  <input id="day-18-return-trip" type="checkbox" value="18" />
+                  <label for="day-18-return-trip">18</label>
+                  <input id="day-19-return-trip" type="checkbox" value="19" />
+                  <label for="day-19-return-trip">19</label>
+                  <input id="day-20-return-trip" type="checkbox" value="20" />
+                  <label for="day-20-return-trip">20</label>
+                  <input id="day-21-return-trip" type="checkbox" value="21" />
+                  <label for="day-21-return-trip">21</label>
+                  <input id="day-22-return-trip" type="checkbox" value="2" />
+                  <label for="day-22-return-trip">22</label>
+                  <input id="day-23-return-trip" type="checkbox" value="23" />
+                  <label for="day-23-return-trip">23</label>
+                  <input id="day-24-return-trip" type="checkbox" value="24" />
+                  <label for="day-24-return-trip">24</label>
+                  <input id="day-25-return-trip" type="checkbox" value="25" />
+                  <label for="day-25-return-trip">25</label>
+                  <input id="day-26-return-trip" type="checkbox" value="26" />
+                  <label for="day-26-return-trip">26</label>
+                  <input id="day-27-return-trip" type="checkbox" value="27" />
+                  <label for="day-27-return-trip">27</label>
+                  <input id="day-28-return-trip" type="checkbox" value="28" />
+                  <label for="day-28-return-trip">28</label>
+                  <input id="day-29-return-trip" type="checkbox" value="29" />
+                  <label for="day-29-return-trip">29</label>
+                  <input id="day-30-return-trip" type="checkbox" value="30" />
+                  <label for="day-30-return-trip">30</label>
+                  <input id="day-31-return-trip" type="checkbox" value="31" />
+                  <label for="day-31-return-trip">31</label>
+                  <input
+                    id="day-last-return-trip"
+                    type="checkbox"
+                    value="last"
+                  />
+                  <label class="day-last" for="day-last-return-trip"
+                    >Sista dagen i månaden</label
+                  >
+                </div>
+                <div class="input-boxes-container">
+                  <div class="input-box calendar day 1">
+                    <label for="time-1">1:a avgångstid</label>
+                    <input id="time-1" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 2">
+                    <label for="time-2">2:a avgångstid</label>
+                    <input id="time-2" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 3">
+                    <label for="time-3">3:e avgångstid</label>
+                    <input id="time-3" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 4">
+                    <label for="time-4">4:e avgångstid</label>
+                    <input id="time-4" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 5">
+                    <label for="time-5">5:e avgångstid</label>
+                    <input id="time-5" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 6">
+                    <label for="time-6">6:e avgångstid</label>
+                    <input id="time-6" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 7">
+                    <label for="time-7">7:e avgångstid</label>
+                    <input id="time-7" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 8">
+                    <label for="time-8">8:e avgångstid</label>
+                    <input id="time-8" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 9">
+                    <label for="time-9">9:e avgångstid</label>
+                    <input id="time-9" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 10">
+                    <label for="time-10">10:e avgångstid</label>
+                    <input id="time-10" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 11">
+                    <label for="time-11">11:e avgångstid</label>
+                    <input id="time-11" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 12">
+                    <label for="time-12">12:e avgångstid</label>
+                    <input id="time-12" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 13">
+                    <label for="time-13">13:e avgångstid</label>
+                    <input id="time-13" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 14">
+                    <label for="time-14">14:e avgångstid</label>
+                    <input id="time-14" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 15">
+                    <label for="time-15">15:e avgångstid</label>
+                    <input id="time-15" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 16">
+                    <label for="time-16">16:e avgångstid</label>
+                    <input id="time-16" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 17">
+                    <label for="time-17">17:e avgångstid</label>
+                    <input id="time-17" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 18">
+                    <label for="time-18">18:e avgångstid</label>
+                    <input id="time-18" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 19">
+                    <label for="time-19">19:e avgångstid</label>
+                    <input id="time-19" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 20">
+                    <label for="time-20">20:e avgångstid</label>
+                    <input id="time-20" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 21">
+                    <label for="time-21">21:a avgångstid</label>
+                    <input id="time-21" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 22">
+                    <label for="time-22">22:a avgångstid</label>
+                    <input id="time-22" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 23">
+                    <label for="time-23">23:e avgångstid</label>
+                    <input id="time-23" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 24">
+                    <label for="time-24">24:e avgångstid</label>
+                    <input id="time-24" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 25">
+                    <label for="time-25">25:e avgångstid</label>
+                    <input id="time-25" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 26">
+                    <label for="time-26">26:e avgångstid</label>
+                    <input id="time-26" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 27">
+                    <label for="time-27">27:e avgångstid</label>
+                    <input id="time-27" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 28">
+                    <label for="time-28">28:e avgångstid</label>
+                    <input id="time-28" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 29">
+                    <label for="time-29">29:e avgångstid</label>
+                    <input id="time-29" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 30">
+                    <label for="time-30">30:e avgångstid</label>
+                    <input id="time-30" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day 31">
+                    <label for="time-31">31:a avgångstid</label>
+                    <input id="time-31" type="text" placeholder="hh:mm" />
+                  </div>
+                  <div class="input-box calendar day last-day-of-the-month">
+                    <label for="time-last-day-of-the-month"
+                      >Sista dagen avgångstid</label
+                    >
+                    <input
+                      id="time-last-day-of-the-month"
+                      type="text"
+                      placeholder="hh:mm"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </fieldset>
         <fieldset>
           <legend>Transportfordon</legend>
-          <div class="radio-buttons">
-            <label>
-              <input type="radio" name="car-or-carpooling" />
-              <span>Egen bil</span>
-            </label>
-            <label>
-              <input id="no" type="radio" name="car-or-carpooling" />
-              <span>Samåkning</span>
-            </label>
+          <div class="radio-and-input">
+            <div class="radio-buttons">
+              <label>
+                <input id="private-car" type="radio" name="car-or-carpooling" />
+                <span>Egen bil</span>
+              </label>
+              <label>
+                <input id="carpooling" type="radio" name="car-or-carpooling" />
+                <span>Samåkning</span>
+              </label>
+            </div>
+            <div class="input-container private-car-paragraph">
+              <p>
+                Få en bil för dig själv. När du reser själv så kostar det mer.
+              </p>
+            </div>
+            <div class="input-container carpooling-paragraph">
+              <p>
+                När du samåker är det andra personer som åker med dig i bilen.
+                Samåkning är det billigaste alternativet.
+              </p>
+            </div>
           </div>
         </fieldset>
         <fieldset>
@@ -322,7 +759,9 @@
             <br />
             Beloppet betalas direkt till chauffören.
           </p>
-          <a class="link" href="#"
+          <a
+            class="link"
+            href="../avgifterforfardtjanst/avgifterforfardtjanst.html"
             >Klicka här för att ta reda på hur biljettpriset beräknas.</a
           >
         </section>
@@ -380,12 +819,20 @@
         </li>
       </ul>
     </footer>
+    <!-- Google Maps Places API -->
+    <script src="../js/placesApi.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMoGiSSSAVRUN7s0NuZtH_lnFcczACmvc&loading=async&libraries=places&callback=initMap"
+    ></script>
     <!-- Flatpickr -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/sv.js"></script>
     <!-- Js -->
     <script src="../js/navbar.js"></script>
     <script src="../js/datetimeFormatting.js"></script>
+    <script src="../js/displayInputCalendar.js"></script>
     <script src="../js/displayInput.js"></script>
   </body>
 </html>

@@ -610,7 +610,8 @@ form.booking-form fieldset.where-to-travel .input-container .input-box input {
 form.booking-form fieldset.where-to-travel .input-container .input-box input#from {
   margin-bottom: 2rem;
 }
-form.booking-form fieldset.how-often-to-travel .input-container {
+form.booking-form fieldset.how-often-to-travel .input-container,
+form.booking-form fieldset.return-trip .input-container {
   display: flex;
   align-items: center;
   justify-content: normal;
@@ -618,27 +619,36 @@ form.booking-form fieldset.how-often-to-travel .input-container {
   /* Changes to display flex when the user clicks on a radio button (from displayInput.js). */
   display: none;
 }
-form.booking-form fieldset.how-often-to-travel .input-container .input-box label {
+form.booking-form fieldset.how-often-to-travel .input-container h3,
+form.booking-form fieldset.return-trip .input-container h3 {
+  text-align: center;
+}
+form.booking-form fieldset.how-often-to-travel .input-container .input-box label,
+form.booking-form fieldset.return-trip .input-container .input-box label {
   font-weight: 700;
 }
-form.booking-form fieldset.how-often-to-travel .input-container .input-box input {
-  width: 40rem;
+form.booking-form fieldset.how-often-to-travel .input-container .input-box input,
+form.booking-form fieldset.return-trip .input-container .input-box input {
+  width: 20rem;
   height: 4.5rem;
 }
-form.booking-form fieldset.how-often-to-travel .input-container .radio-buttons {
+form.booking-form fieldset.how-often-to-travel .input-container .radio-buttons,
+form.booking-form fieldset.return-trip .input-container .radio-buttons {
   display: flex;
   align-items: normal;
   justify-content: normal;
   flex-direction: column;
 }
-form.booking-form fieldset.how-often-to-travel .input-container .radio-buttons .row {
+form.booking-form fieldset.how-often-to-travel .input-container .radio-buttons .row,
+form.booking-form fieldset.return-trip .input-container .radio-buttons .row {
   display: flex;
   align-items: normal;
   justify-content: center;
   flex-direction: row;
   gap: 1rem;
 }
-form.booking-form fieldset.how-often-to-travel .input-container .calendar {
+form.booking-form fieldset.how-often-to-travel .input-container .calendar-container,
+form.booking-form fieldset.return-trip .input-container .calendar-container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -647,15 +657,18 @@ form.booking-form fieldset.how-often-to-travel .input-container .calendar {
   flex-wrap: wrap;
   gap: 1rem;
 }
-form.booking-form fieldset.how-often-to-travel .input-container .calendar input[type=checkbox]:not(:checked),
-form.booking-form fieldset.how-often-to-travel .input-container .calendar input[type=checkbox]:checked {
+form.booking-form fieldset.how-often-to-travel .input-container .calendar-container input[type=checkbox]:not(:checked),
+form.booking-form fieldset.how-often-to-travel .input-container .calendar-container input[type=checkbox]:checked,
+form.booking-form fieldset.return-trip .input-container .calendar-container input[type=checkbox]:not(:checked),
+form.booking-form fieldset.return-trip .input-container .calendar-container input[type=checkbox]:checked {
   /* Can't do display:none because that'll make the checkboxes non-focusable with the keyboard (i.e. cant be accessed via tabbing). */
   /* So instead I place the input somewhere far, far away, making it "dissappear". But it's still accessible via the label.*/
   position: absolute;
   /* It's over 9000! */
   left: -9000%;
 }
-form.booking-form fieldset.how-often-to-travel .input-container .calendar input[type=checkbox] + label {
+form.booking-form fieldset.how-often-to-travel .input-container .calendar-container input[type=checkbox] + label,
+form.booking-form fieldset.return-trip .input-container .calendar-container input[type=checkbox] + label {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -669,18 +682,54 @@ form.booking-form fieldset.how-often-to-travel .input-container .calendar input[
   box-shadow: inset 0 0 0 0.2rem #202e45;
   transition: all 0.175s ease;
 }
-form.booking-form fieldset.how-often-to-travel .input-container .calendar input[type=checkbox] + label:hover {
+form.booking-form fieldset.how-often-to-travel .input-container .calendar-container input[type=checkbox] + label:hover,
+form.booking-form fieldset.return-trip .input-container .calendar-container input[type=checkbox] + label:hover {
   cursor: pointer;
 }
-form.booking-form fieldset.how-often-to-travel .input-container .calendar input[type=checkbox] + label.day-last {
+form.booking-form fieldset.how-often-to-travel .input-container .calendar-container input[type=checkbox] + label.day-last,
+form.booking-form fieldset.return-trip .input-container .calendar-container input[type=checkbox] + label.day-last {
   width: 20rem !important;
 }
-form.booking-form fieldset.how-often-to-travel .input-container .calendar input[type=checkbox]:checked + label {
+form.booking-form fieldset.how-often-to-travel .input-container .calendar-container input[type=checkbox]:checked + label,
+form.booking-form fieldset.return-trip .input-container .calendar-container input[type=checkbox]:checked + label {
   background-color: #d6d1ff;
   box-shadow: inset 0 0 0.6rem 0.2rem rgba(0, 0, 0, 0.25);
 }
-form.booking-form fieldset.how-often-to-travel .input-container .calendar input[type=checkbox]:focus + label {
+form.booking-form fieldset.how-often-to-travel .input-container .calendar-container input[type=checkbox]:focus + label,
+form.booking-form fieldset.return-trip .input-container .calendar-container input[type=checkbox]:focus + label {
   background-color: #d6d1ff;
+}
+form.booking-form fieldset.how-often-to-travel .input-container.weekly .input-boxes-container,
+form.booking-form fieldset.how-often-to-travel .input-container.monthly .input-boxes-container,
+form.booking-form fieldset.return-trip .input-container.weekly .input-boxes-container,
+form.booking-form fieldset.return-trip .input-container.monthly .input-boxes-container {
+  width: 60rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+form.booking-form fieldset.how-often-to-travel .input-container.weekly .input-box.day,
+form.booking-form fieldset.how-often-to-travel .input-container.weekly .input-box.calendar.day,
+form.booking-form fieldset.how-often-to-travel .input-container.monthly .input-box.day,
+form.booking-form fieldset.how-often-to-travel .input-container.monthly .input-box.calendar.day,
+form.booking-form fieldset.return-trip .input-container.weekly .input-box.day,
+form.booking-form fieldset.return-trip .input-container.weekly .input-box.calendar.day,
+form.booking-form fieldset.return-trip .input-container.monthly .input-box.day,
+form.booking-form fieldset.return-trip .input-container.monthly .input-box.calendar.day {
+  display: none;
+}
+form.booking-form fieldset.how-often-to-travel .input-container.weekly .input-box.day.show,
+form.booking-form fieldset.how-often-to-travel .input-container.weekly .input-box.calendar.day.show,
+form.booking-form fieldset.how-often-to-travel .input-container.monthly .input-box.day.show,
+form.booking-form fieldset.how-often-to-travel .input-container.monthly .input-box.calendar.day.show,
+form.booking-form fieldset.return-trip .input-container.weekly .input-box.day.show,
+form.booking-form fieldset.return-trip .input-container.weekly .input-box.calendar.day.show,
+form.booking-form fieldset.return-trip .input-container.monthly .input-box.day.show,
+form.booking-form fieldset.return-trip .input-container.monthly .input-box.calendar.day.show {
+  display: flex;
 }
 form.booking-form .radio-and-input {
   display: flex;
@@ -718,16 +767,33 @@ form.booking-form .radio-and-input .input-container .input-box input {
   form.booking-form fieldset.where-to-travel .input-container .input-box input {
     width: 100%;
   }
-  form.booking-form fieldset.how-often-to-travel .radio-and-input .input-container .input-box input {
-    max-width: none;
-  }
-  form.booking-form fieldset.how-often-to-travel .radio-and-input .input-container.monthly .calendar {
+  form.booking-form fieldset.how-often-to-travel .radio-and-input .input-container.monthly .calendar-container,
+  form.booking-form fieldset.return-trip .radio-and-input .input-container.monthly .calendar-container {
     width: 37rem;
   }
-  form.booking-form fieldset.how-often-to-travel .radio-and-input .input-container.monthly .calendar label {
+  form.booking-form fieldset.how-often-to-travel .radio-and-input .input-container.monthly .calendar-container label,
+  form.booking-form fieldset.return-trip .radio-and-input .input-container.monthly .calendar-container label {
     width: 2.8rem;
     height: 2.8rem;
     font-size: 1.8rem;
+  }
+  form.booking-form fieldset.how-often-to-travel .radio-and-input .input-container.weekly .input-boxes-container,
+  form.booking-form fieldset.how-often-to-travel .radio-and-input .input-container.monthly .input-boxes-container,
+  form.booking-form fieldset.return-trip .radio-and-input .input-container.weekly .input-boxes-container,
+  form.booking-form fieldset.return-trip .radio-and-input .input-container.monthly .input-boxes-container {
+    width: 100%;
+  }
+  form.booking-form fieldset.how-often-to-travel .radio-and-input .input-container.weekly .input-box.day,
+  form.booking-form fieldset.how-often-to-travel .radio-and-input .input-container.monthly .input-box.day,
+  form.booking-form fieldset.return-trip .radio-and-input .input-container.weekly .input-box.day,
+  form.booking-form fieldset.return-trip .radio-and-input .input-container.monthly .input-box.day {
+    display: none;
+  }
+  form.booking-form fieldset.how-often-to-travel .radio-and-input .input-container.weekly .input-box.day.show,
+  form.booking-form fieldset.how-often-to-travel .radio-and-input .input-container.monthly .input-box.day.show,
+  form.booking-form fieldset.return-trip .radio-and-input .input-container.weekly .input-box.day.show,
+  form.booking-form fieldset.return-trip .radio-and-input .input-container.monthly .input-box.day.show {
+    display: flex;
   }
   form.booking-form fieldset .radio-and-input .input-container {
     width: 80%;

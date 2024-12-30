@@ -119,15 +119,26 @@
                   id="departure"
                   type="radio"
                   name="departure-or-arrival"
+                  aria-expanded="false"
+                  aria-controls="departure-inputs"
                 />
                 <span>Avgångstid</span>
               </label>
               <label>
-                <input id="arrival" type="radio" name="departure-or-arrival" />
+                <input
+                  id="arrival"
+                  type="radio"
+                  name="departure-or-arrival"
+                  aria-expanded="false"
+                  aria-controls="arrival-inputs"
+                />
                 <span>Ankomsttid</span>
               </label>
             </div>
-            <div class="input-container departure-container">
+            <div
+              id="departure-inputs"
+              class="input-container departure-container"
+            >
               <div class="input-box">
                 <label for="day-departure">Avgång dag</label>
                 <input
@@ -147,7 +158,7 @@
                 />
               </div>
             </div>
-            <div class="input-container arrival-container">
+            <div id="arrival-inputs" class="input-container arrival-container">
               <div class="input-box">
                 <label for="day-arrival">Ankomst dag</label>
                 <input
@@ -174,7 +185,13 @@
           <div class="radio-and-input">
             <div class="radio-buttons">
               <label>
-                <input type="radio" name="yes-or-no" />
+                <input
+                  id="yes"
+                  type="radio"
+                  name="yes-or-no"
+                  aria-expanded="false"
+                  aria-controls="departure-input-round-trip"
+                />
                 <span>Ja</span>
               </label>
               <label>
@@ -182,7 +199,7 @@
                 <span>Nej</span>
               </label>
             </div>
-            <div class="input-container">
+            <div id="departure-input-round-trip" class="input-container">
               <div class="input-box">
                 <label for="day">Avgång dag</label>
                 <input
@@ -209,20 +226,38 @@
           <div class="radio-and-input">
             <div class="radio-buttons">
               <label>
-                <input id="private-car" type="radio" name="car-or-carpooling" />
+                <input
+                  id="private-car"
+                  type="radio"
+                  name="car-or-carpooling"
+                  aria-expanded="false"
+                  aria-controls="aria-private-car-description"
+                />
                 <span>Egen bil</span>
               </label>
               <label>
-                <input id="carpooling" type="radio" name="car-or-carpooling" />
+                <input
+                  id="carpooling"
+                  type="radio"
+                  name="car-or-carpooling"
+                  aria-expanded="false"
+                  aria-controls="aria-carpooling-description"
+                />
                 <span>Samåkning</span>
               </label>
             </div>
-            <div class="input-container private-car-paragraph">
+            <div
+              id="aria-private-car-description"
+              class="input-container private-car-paragraph"
+            >
               <p>
                 Få en bil för dig själv. När du reser själv så kostar det mer.
               </p>
             </div>
-            <div class="input-container carpooling-paragraph">
+            <div
+              id="aria-carpooling-description"
+              class="input-container carpooling-paragraph"
+            >
               <p>
                 När du samåker är det andra personer som åker med dig i bilen.
                 Samåkning är det billigaste alternativet.

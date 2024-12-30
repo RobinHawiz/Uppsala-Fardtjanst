@@ -14,15 +14,19 @@ radioAndInputs.forEach((radioAndInput) => {
       label.addEventListener("click", () => {
         inputContainer.style.display = "none";
       });
-    } else if (!(label.querySelector("#no") === null)) {
-      // Hide input
+      // Set aria expanded to false for the radio button labeled yes
       label.addEventListener("click", () => {
-        inputContainer.style.display = "none";
+        document.querySelector("#yes").setAttribute("aria-expanded", false);
       });
     } else if (!(label.querySelector("#yes") === null)) {
-      // Hide input
+      // Show input
       label.addEventListener("click", () => {
         inputContainer.style.display = "flex";
+      });
+
+      // Set aria expanded to true for the radio button labeled yes
+      label.addEventListener("click", () => {
+        document.querySelector("#yes").setAttribute("aria-expanded", true);
       });
     }
     // Other special cases for when we want to show a different input depending on which radio button is selected.
@@ -78,6 +82,16 @@ radioAndInputs.forEach((radioAndInput) => {
           ".input-container.departure-container"
         ).style.display = "flex";
       });
+      // Set aria expanded to true for departure input
+      label.addEventListener("click", () => {
+        document
+          .querySelector("#departure")
+          .setAttribute("aria-expanded", true);
+      });
+      // Set aria expanded to false for arrival input
+      label.addEventListener("click", () => {
+        document.querySelector("#arrival").setAttribute("aria-expanded", false);
+      });
     } else if (!(label.querySelector("#arrival") === null)) {
       // Hide departure input
       label.addEventListener("click", () => {
@@ -90,6 +104,16 @@ radioAndInputs.forEach((radioAndInput) => {
         document.querySelector(
           ".input-container.arrival-container"
         ).style.display = "flex";
+      });
+      // Set aria expanded to true for arrival input
+      label.addEventListener("click", () => {
+        document.querySelector("#arrival").setAttribute("aria-expanded", true);
+      });
+      // Set aria expanded to false for departure input
+      label.addEventListener("click", () => {
+        document
+          .querySelector("#departure")
+          .setAttribute("aria-expanded", false);
       });
     } else if (!(label.querySelector("#private-car") === null)) {
       // Hide carpooling paragraph
@@ -104,6 +128,18 @@ radioAndInputs.forEach((radioAndInput) => {
           ".input-container.private-car-paragraph"
         ).style.display = "flex";
       });
+      // Set aria expanded to true for private car input
+      label.addEventListener("click", () => {
+        document
+          .querySelector("#private-car")
+          .setAttribute("aria-expanded", true);
+      });
+      // Set aria expanded to false for carpooling input
+      label.addEventListener("click", () => {
+        document
+          .querySelector("#carpooling")
+          .setAttribute("aria-expanded", false);
+      });
     } else if (!(label.querySelector("#carpooling") === null)) {
       // Hide private car paragraph
       label.addEventListener("click", () => {
@@ -116,6 +152,18 @@ radioAndInputs.forEach((radioAndInput) => {
         document.querySelector(
           ".input-container.carpooling-paragraph"
         ).style.display = "flex";
+      });
+      // Set aria expanded to true for carpooling input
+      label.addEventListener("click", () => {
+        document
+          .querySelector("#carpooling")
+          .setAttribute("aria-expanded", true);
+      });
+      // Set aria expanded to false for private car input
+      label.addEventListener("click", () => {
+        document
+          .querySelector("#private-car")
+          .setAttribute("aria-expanded", false);
       });
     }
     // In all other cases we show an input, regardless of which radio button was chosen.

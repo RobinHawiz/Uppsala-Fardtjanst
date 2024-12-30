@@ -1,4 +1,4 @@
-let accordions = document.querySelectorAll("button[aria-expanded]");
+let accordions = document.querySelectorAll("button[aria-expanded].accordion");
 
 accordions.forEach((accordion) => {
   accordion.addEventListener("click", () => {

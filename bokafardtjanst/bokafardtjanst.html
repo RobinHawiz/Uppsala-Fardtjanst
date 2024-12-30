@@ -132,23 +132,39 @@
                 <label for="day-departure">Avgång dag</label>
                 <input
                   id="day-departure"
+                  class="day-flatpickr"
                   type="text"
                   placeholder="yyyy-mm-dd"
                 />
               </div>
               <div class="input-box">
                 <label for="time-departure">Avgång tid</label>
-                <input id="time-departure" type="text" placeholder="hh:mm" />
+                <input
+                  id="time-departure"
+                  class="time-flatpickr"
+                  type="text"
+                  placeholder="hh:mm"
+                />
               </div>
             </div>
             <div class="input-container arrival-container">
               <div class="input-box">
                 <label for="day-arrival">Ankomst dag</label>
-                <input id="day-arrival" type="text" placeholder="yyyy-mm-dd" />
+                <input
+                  id="day-arrival"
+                  class="day-flatpickr"
+                  type="text"
+                  placeholder="yyyy-mm-dd"
+                />
               </div>
               <div class="input-box">
                 <label for="time-arrival">Ankomst tid</label>
-                <input id="time-arrival" type="text" placeholder="hh:mm" />
+                <input
+                  id="time-arrival"
+                  class="time-flatpickr"
+                  type="text"
+                  placeholder="hh:mm"
+                />
               </div>
             </div>
           </div>
@@ -169,11 +185,21 @@
             <div class="input-container">
               <div class="input-box">
                 <label for="day">Avgång dag</label>
-                <input id="day" type="text" placeholder="yyyy-mm-dd" />
+                <input
+                  id="day"
+                  class="day-flatpickr"
+                  type="text"
+                  placeholder="yyyy-mm-dd"
+                />
               </div>
               <div class="input-box">
                 <label for="time">Avgång tid</label>
-                <input id="time" type="text" placeholder="hh:mm" />
+                <input
+                  id="time"
+                  class="time-flatpickr"
+                  type="text"
+                  placeholder="hh:mm"
+                />
               </div>
             </div>
           </div>
@@ -201,6 +227,35 @@
                 När du samåker är det andra personer som åker med dig i bilen.
                 Samåkning är det billigaste alternativet.
               </p>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="needs">
+          <legend>Behov</legend>
+          <div class="radio-buttons">
+            <div class="row">
+              <label>
+                <input type="checkbox" name="wheelchair" />
+                <span>Rullstol</span>
+              </label>
+              <label>
+                <input type="checkbox" name="walking-frame" />
+                <span>Rollator</span>
+              </label>
+              <label>
+                <input type="checkbox" name="additional-passengers" />
+                <span>Medresenärer</span>
+              </label>
+            </div>
+            <div class="row">
+              <label>
+                <input type="checkbox" name="helper-companion" />
+                <span>Ledsagare</span>
+              </label>
+              <label>
+                <input type="checkbox" name="assistance-dog" />
+                <span>Assistanshund</span>
+              </label>
             </div>
           </div>
         </fieldset>
@@ -295,7 +350,7 @@
     <script src="https://npmcdn.com/flatpickr/dist/l10n/sv.js"></script>
     <!-- Js -->
     <script src="../js/navbar.js"></script>
-    <script src="../js/datetimeFormatting.js"></script>
+    <script src="../js/flatpickr.js"></script>
     <script src="../js/displayInput.js"></script>
   </body>
 </html>

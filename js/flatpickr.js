@@ -1,9 +1,9 @@
-flatpickr("#day", {
+flatpickr(".day-flatpickr", {
   locale: "sv",
   disableMobile: "true",
 });
 
-flatpickr("#time", {
+flatpickr(".time-flatpickr", {
   enableTime: true,
   noCalendar: true,
   dateFormat: "H:i",

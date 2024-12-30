@@ -101,6 +101,16 @@ form.booking-form {
     }
   }
 
+  fieldset.needs {
+    .radio-buttons {
+      @include flex(normal, normal, column);
+      .row {
+        @include flex(normal, center, row);
+        gap: 1rem;
+      }
+    }
+  }
+
   .radio-and-input {
     @include flex(center, normal, column);
     .input-container {
@@ -178,7 +188,7 @@ form.booking-form {
   }
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 430px) {
   form.booking-form {
     fieldset.how-often-to-travel {
       .input-container {
@@ -190,6 +200,18 @@ form.booking-form {
             label {
               margin: 0.5rem 1rem;
             }
+          }
+        }
+      }
+    }
+    fieldset.needs {
+      .radio-buttons {
+        gap: 0;
+        .row {
+          flex-wrap: wrap;
+          gap: 0;
+          label {
+            margin: 0.5rem 1rem;
           }
         }
       }

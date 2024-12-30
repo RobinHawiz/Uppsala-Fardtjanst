@@ -106,11 +106,21 @@
           <div class="input-container">
             <div class="input-box">
               <label for="from">Från</label>
-              <input id="from" type="text" />
+              <input
+                id="from"
+                class="autocomplete"
+                type="text"
+                value="Karlsrogatan 81, Uppsala"
+              />
             </div>
             <div class="input-box">
               <label for="to">Till</label>
-              <input id="to" type="text" />
+              <input
+                id="to"
+                class="autocomplete"
+                type="text"
+                value="Ingång 85 Akademiska sjukhuset, Uppsala "
+              />
             </div>
           </div>
         </fieldset>
@@ -119,22 +129,58 @@
           <div class="radio-and-input">
             <div class="radio-buttons">
               <label>
-                <input type="radio" name="departure-or-arrival" />
+                <input
+                  id="departure"
+                  type="radio"
+                  name="departure-or-arrival"
+                />
                 <span>Avgångstid</span>
               </label>
               <label>
-                <input type="radio" name="departure-or-arrival" />
+                <input id="arrival" type="radio" name="departure-or-arrival" />
                 <span>Ankomsttid</span>
               </label>
             </div>
-            <div class="input-container">
+            <div class="input-container departure-container">
               <div class="input-box">
-                <label for="day">Dag</label>
-                <input id="day" type="text" placeholder="yyyy-mm-dd" />
+                <label for="day-departure">Avgång dag</label>
+                <input
+                  id="day-departure"
+                  class="day-flatpickr"
+                  type="text"
+                  placeholder="yyyy-mm-dd"
+                  value="2025-03-03"
+                />
               </div>
               <div class="input-box">
-                <label for="time">Tid</label>
-                <input id="time" type="text" placeholder="hh:mm" />
+                <label for="time-departure">Avgång tid</label>
+                <input
+                  id="time-departure"
+                  class="time-flatpickr"
+                  type="text"
+                  placeholder="hh:mm"
+                  value="13:45"
+                />
+              </div>
+            </div>
+            <div class="input-container arrival-container">
+              <div class="input-box">
+                <label for="day-arrival">Ankomst dag</label>
+                <input
+                  id="day-arrival"
+                  class="day-flatpickr"
+                  type="text"
+                  placeholder="yyyy-mm-dd"
+                />
+              </div>
+              <div class="input-box">
+                <label for="time-arrival">Ankomst tid</label>
+                <input
+                  id="time-arrival"
+                  class="time-flatpickr"
+                  type="text"
+                  placeholder="hh:mm"
+                />
               </div>
             </div>
           </div>
@@ -149,7 +195,9 @@
             aria-labelledby="message-to-driver"
             rows="5"
             cols="40"
-          ></textarea>
+          >
+Behöver ledsagare till/från dörren, hjälp med baggage, etc... </textarea
+          >
         </fieldset>
         <div class="button-container">
           <a href="bekraftadresa.html" class="button cancel-booking">Avbryt</a>
@@ -206,12 +254,19 @@
         </li>
       </ul>
     </footer>
+    <!-- Google Maps Places API -->
+    <script src="../../js/placesApi.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMoGiSSSAVRUN7s0NuZtH_lnFcczACmvc&loading=async&libraries=places&callback=initMap"
+    ></script>
     <!-- Flatpickr -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/sv.js"></script>
     <!-- Js -->
     <script src="../../js/navbar.js"></script>
-    <script src="../../js/datetimeFormatting.js"></script>
+    <script src="../../js/flatpickr.js"></script>
     <script src="../../js/displayInput.js"></script>
   </body>
 </html>

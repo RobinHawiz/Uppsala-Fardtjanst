@@ -1,0 +1,15 @@
+main.återkommande-resor {
+  p.description {
+    margin: 0 2rem 5rem 2rem;
+    line-height: 2.7rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main.återkommande-resor {
+    p.description {
+      margin: 0 2rem 5rem 2rem;
+      line-height: 2.7rem;
+    }
+  }
+}

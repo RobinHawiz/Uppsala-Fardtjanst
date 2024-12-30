@@ -731,6 +731,19 @@ form.booking-form fieldset.return-trip .input-container.monthly .input-box.day.s
 form.booking-form fieldset.return-trip .input-container.monthly .input-box.calendar.day.show {
   display: flex;
 }
+form.booking-form fieldset.needs .radio-buttons {
+  display: flex;
+  align-items: normal;
+  justify-content: normal;
+  flex-direction: column;
+}
+form.booking-form fieldset.needs .radio-buttons .row {
+  display: flex;
+  align-items: normal;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+}
 form.booking-form .radio-and-input {
   display: flex;
   align-items: center;
@@ -803,7 +816,7 @@ form.booking-form .radio-and-input .input-container .input-box input {
     width: 100%;
   }
 }
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 430px) {
   form.booking-form fieldset.how-often-to-travel .input-container .radio-buttons {
     gap: 0;
   }
@@ -812,6 +825,16 @@ form.booking-form .radio-and-input .input-container .input-box input {
     gap: 0;
   }
   form.booking-form fieldset.how-often-to-travel .input-container .radio-buttons .row label {
+    margin: 0.5rem 1rem;
+  }
+  form.booking-form fieldset.needs .radio-buttons {
+    gap: 0;
+  }
+  form.booking-form fieldset.needs .radio-buttons .row {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  form.booking-form fieldset.needs .radio-buttons .row label {
     margin: 0.5rem 1rem;
   }
 }
@@ -1416,5 +1439,16 @@ main.tillgänglighetsredogörelse section p {
   main.tillgänglighetsredogörelse section p,
   main.tillgänglighetsredogörelse section a.standalone-link {
     margin: 1.4rem 1rem;
+  }
+}
+main.återkommande-resor p.description {
+  margin: 0 2rem 5rem 2rem;
+  line-height: 2.7rem;
+}
+
+@media screen and (max-width: 768px) {
+  main.återkommande-resor p.description {
+    margin: 0 2rem 5rem 2rem;
+    line-height: 2.7rem;
   }
 }/*# sourceMappingURL=style.css.map */

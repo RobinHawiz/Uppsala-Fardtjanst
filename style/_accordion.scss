@@ -1,5 +1,7 @@
 .accordion-container {
   width: 60rem;
+  list-style: none;
+  font-weight: 400;
   .accordion {
     @include flex(center, normal, row);
     margin: auto;

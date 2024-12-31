@@ -98,7 +98,7 @@
     <main>
       <h1>Boka färdtjänst</h1>
       <span class="divider"></span>
-      <form class="booking-form" autocomplete="on" action="">
+      <form class="booking-form" autocomplete="on" action="POST">
         <fieldset class="where-to-travel">
           <legend>Vart vill du resa?</legend>
           <div class="input-container">
@@ -109,11 +109,18 @@
                 id="from"
                 type="text"
                 placeholder=""
+                aria-autocomplete="list"
               />
             </div>
             <div class="input-box">
               <label for="to">Till</label>
-              <input class="autocomplete" id="to" type="text" placeholder="" />
+              <input
+                class="autocomplete"
+                id="to"
+                type="text"
+                placeholder=""
+                aria-autocomplete="list"
+              />
             </div>
           </div>
         </fieldset>

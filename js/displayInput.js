@@ -18,6 +18,10 @@ radioAndInputs.forEach((radioAndInput) => {
       label.addEventListener("click", () => {
         document.querySelector("#yes").setAttribute("aria-expanded", false);
       });
+      // Uncheck the yes radio button
+      label.addEventListener("click", () => {
+        document.querySelector("#yes").checked = false;
+      });
     } else if (!(label.querySelector("#yes") === null)) {
       // Show input
       label.addEventListener("click", () => {
@@ -27,6 +31,11 @@ radioAndInputs.forEach((radioAndInput) => {
       // Set aria expanded to true for the radio button labeled yes
       label.addEventListener("click", () => {
         document.querySelector("#yes").setAttribute("aria-expanded", true);
+      });
+
+      // Uncheck the no radio button
+      label.addEventListener("click", () => {
+        document.querySelector("#no").checked = false;
       });
     }
     // Other special cases for when we want to show a different input depending on which radio button is selected.
@@ -92,6 +101,11 @@ radioAndInputs.forEach((radioAndInput) => {
       label.addEventListener("click", () => {
         document.querySelector("#arrival").setAttribute("aria-expanded", false);
       });
+
+      // Uncheck the arrival radio button
+      label.addEventListener("click", () => {
+        document.querySelector("#arrival").checked = false;
+      });
     } else if (!(label.querySelector("#arrival") === null)) {
       // Hide departure input
       label.addEventListener("click", () => {
@@ -114,6 +128,11 @@ radioAndInputs.forEach((radioAndInput) => {
         document
           .querySelector("#departure")
           .setAttribute("aria-expanded", false);
+      });
+
+      // Uncheck the departure radio button
+      label.addEventListener("click", () => {
+        document.querySelector("#departure").checked = false;
       });
     } else if (!(label.querySelector("#private-car") === null)) {
       // Hide carpooling paragraph
@@ -140,6 +159,10 @@ radioAndInputs.forEach((radioAndInput) => {
           .querySelector("#carpooling")
           .setAttribute("aria-expanded", false);
       });
+      // Uncheck the carpooling radio button
+      label.addEventListener("click", () => {
+        document.querySelector("#carpooling").checked = false;
+      });
     } else if (!(label.querySelector("#carpooling") === null)) {
       // Hide private car paragraph
       label.addEventListener("click", () => {
@@ -164,6 +187,10 @@ radioAndInputs.forEach((radioAndInput) => {
         document
           .querySelector("#private-car")
           .setAttribute("aria-expanded", false);
+      });
+      // Uncheck the private car radio button
+      label.addEventListener("click", () => {
+        document.querySelector("#private-car").checked = false;
       });
     }
     // In all other cases we show an input, regardless of which radio button was chosen.

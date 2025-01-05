@@ -15,6 +15,8 @@ radioAndInputs.forEach((radioAndInput) => {
         inputContainer.style.display = "none";
         // Set aria expanded to false for the radio button labeled yes
         document.querySelector("#yes").setAttribute("aria-expanded", false);
+        // Prevent the user from unchecking the checkbox.
+        document.querySelector("#no").checked = true;
         // Uncheck the yes radio button
         document.querySelector("#yes").checked = false;
       });
@@ -24,6 +26,8 @@ radioAndInputs.forEach((radioAndInput) => {
         inputContainer.style.display = "flex";
         // Set aria expanded to true for the radio/checkbox labeled yes
         document.querySelector("#yes").setAttribute("aria-expanded", true);
+        // Prevent the user from unchecking the checkbox.
+        document.querySelector("#yes").checked = true;
         // Uncheck the no checkbox
         document.querySelector("#no").checked = false;
       });
@@ -77,6 +81,8 @@ radioAndInputs.forEach((radioAndInput) => {
           .setAttribute("aria-expanded", true);
         // Set aria expanded to false for arrival input
         document.querySelector("#arrival").setAttribute("aria-expanded", false);
+        // Prevent the user from unchecking the checkbox.
+        document.querySelector("#departure").checked = true;
         // Uncheck the arrival checkbox
         document.querySelector("#arrival").checked = false;
       });
@@ -96,6 +102,8 @@ radioAndInputs.forEach((radioAndInput) => {
         document
           .querySelector("#departure")
           .setAttribute("aria-expanded", false);
+        // Prevent the user from unchecking the checkbox.
+        document.querySelector("#arrival").checked = true;
         // Uncheck the departure checkbox
         document.querySelector("#departure").checked = false;
       });
@@ -117,6 +125,8 @@ radioAndInputs.forEach((radioAndInput) => {
         document
           .querySelector("#carpooling")
           .setAttribute("aria-expanded", false);
+        // Prevent the user from unchecking the checkbox.
+        document.querySelector("#private-car").checked = true;
         // Uncheck the carpooling checkbox
         document.querySelector("#carpooling").checked = false;
       });
@@ -138,6 +148,8 @@ radioAndInputs.forEach((radioAndInput) => {
         document
           .querySelector("#private-car")
           .setAttribute("aria-expanded", false);
+        // Prevent the user from unchecking the checkbox.
+        document.querySelector("#carpooling").checked = true;
         // Uncheck the private car checkbox
         document.querySelector("#private-car").checked = false;
       });

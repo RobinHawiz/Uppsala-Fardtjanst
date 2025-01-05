@@ -515,7 +515,6 @@ form input[type=number] {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  position: relative;
   padding: 1rem 2rem 1rem 1rem;
   border-radius: 3.1rem;
   transition: 0.25s ease;
@@ -541,9 +540,11 @@ input[type=radio],
   width: 2.6rem;
   height: 2.6rem;
   margin-right: 0.7rem;
+  padding: 0;
   border: 0.3rem solid #202e45;
   border-radius: 50%;
   background-color: white;
+  position: relative;
 }
 
 input[type=radio]::before,
@@ -551,14 +552,17 @@ input[type=radio]::before,
   content: "";
   display: block;
   position: absolute;
-  top: 1.73rem;
-  left: 1.6rem;
+  top: 0;
+  left: 0;
+  margin-top: calc(50% - 0.7rem);
+  margin-left: calc(50% - 0.7rem);
   width: 1.4rem;
   height: 1.4rem;
   border-radius: 50%;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em #202e45;
+  transform-origin: center;
 }
 
 input[type=radio]:checked::before,
@@ -582,11 +586,6 @@ input[type=radio]:focus,
   }
   form input {
     font-size: 1.8rem;
-  }
-  input[type=radio]::before,
-  .radio-buttons input[type=checkbox]::before {
-    top: 1.6rem;
-    left: 1.6rem;
   }
 }
 @media screen and (max-width: 768px) {

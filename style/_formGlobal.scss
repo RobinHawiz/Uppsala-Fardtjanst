@@ -69,7 +69,6 @@ form {
   margin-bottom: 1.5rem;
   label {
     @include flex(center, center, row);
-    position: relative;
     padding: 1rem 2rem 1rem 1rem;
     border-radius: 3.1rem;
     transition: 0.25s ease;
@@ -97,9 +96,11 @@ input[type="radio"],
   width: 2.6rem;
   height: 2.6rem;
   margin-right: 0.7rem;
+  padding: 0;
   border: 0.3rem solid $primary-color;
   border-radius: 50%;
   background-color: $input-background-color;
+  position: relative;
 }
 
 input[type="radio"]::before,
@@ -107,14 +108,17 @@ input[type="radio"]::before,
   content: "";
   display: block;
   position: absolute;
-  top: 1.73rem;
-  left: 1.6rem;
+  top: 0;
+  left: 0;
+  margin-top: calc(50% - 0.7rem);
+  margin-left: calc(50% - 0.7rem);
   width: 1.4rem;
   height: 1.4rem;
   border-radius: 50%;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em $primary-color;
+  transform-origin: center;
 }
 
 input[type="radio"]:checked::before,
@@ -139,11 +143,6 @@ input[type="radio"]:focus,
     input {
       font-size: $p-mobile-font;
     }
-  }
-  input[type="radio"]::before,
-  .radio-buttons input[type="checkbox"]::before {
-    top: 1.6rem;
-    left: 1.6rem;
   }
 }
 
